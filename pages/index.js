@@ -21,36 +21,41 @@ export default function Home() {
 
   const context = useContext(AppContext)
 
-  useEffect(()=>{
+  useEffect(() => {
     let currColor = localStorage.getItem("theme-color") ? localStorage.getItem("theme-color") : context.colorContext
     let currTheme = localStorage.getItem("theme-mode") ? localStorage.getItem("theme-mode") : context.themeContext
 
-    if(!currColor){
+    if (!currColor) {
       currColor = "crimson"
     }
-    if(!currTheme){
+    if (!currTheme) {
       currTheme = "dark"
     }
-    
+
     document.querySelector("body").setAttribute("theme-mode", `theme-mode-${currTheme}`)
     document.querySelector("body").setAttribute("theme-color", `theme-color-${currColor}`)
   }, [context])
 
   return (
     <div className={styles.container}>
-      <Head_JSX/>
-      <Warning/>
-      <Menu/>
-      <ThemeMenu/>
-      <Navbar/>
-      <RadioPlayer/>
-      <Hero/>
-      <About/>
-      <Services/>
-      <Skills/>
-      <Portfolio/>
-      <Blog/>
-      <Contact/>
+      <noscript>
+        <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PGZLDCW"
+          style="display:none;visibility:hidden" width="0">
+        </iframe>
+      </noscript>
+      <Head_JSX />
+      <Warning />
+      <Menu />
+      <ThemeMenu />
+      <Navbar />
+      <RadioPlayer />
+      <Hero />
+      <About />
+      <Services />
+      <Skills />
+      <Portfolio />
+      <Blog />
+      <Contact />
     </div>
   )
 }
