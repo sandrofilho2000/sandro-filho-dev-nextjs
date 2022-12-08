@@ -12,8 +12,10 @@ const ThemeMenu = () => {
             color = localStorage.getItem("theme-color")
         }else{
             color = context.colorContext
+            if(!color){
+                color = "crimson"
+            }
         }
-
 
         document.querySelectorAll("li[color]").forEach((item)=>{
             if(item.classList.contains(color)){
@@ -23,6 +25,7 @@ const ThemeMenu = () => {
             }
         })
     }
+    
 
     let handleThemeActive = () =>{
         let theme;

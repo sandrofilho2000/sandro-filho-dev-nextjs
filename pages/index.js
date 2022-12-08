@@ -23,6 +23,13 @@ export default function Home() {
   useEffect(()=>{
     let currColor = localStorage.getItem("theme-color") ? localStorage.getItem("theme-color") : context.colorContext
     let currTheme = localStorage.getItem("theme-mode") ? localStorage.getItem("theme-mode") : context.themeContext
+
+    if(!currColor){
+      currColor = "crimson"
+    }
+    if(!currTheme){
+      currTheme = "dark"
+    }
     
     document.querySelector("body").setAttribute("theme-mode", `theme-mode-${currTheme}`)
     document.querySelector("body").setAttribute("theme-color", `theme-color-${currColor}`)
