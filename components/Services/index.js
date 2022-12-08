@@ -18,7 +18,7 @@ const Services = () => {
                     <div className="box">
                         <FaCode/>
                         <div className="text">Evolução/Criação de Sites</div>
-                        <p>HTML, CSS e JS sempre foram meus aliados e com eles, escreverei código que irá trazer seu
+                        <p>HTML, CSS e JS sempre foram meus aliados e com eles, escreverei o código que irá trazer seu
                             projeto à vida</p>
                     </div>
                 </div>
