@@ -8,6 +8,8 @@ const ThemeMenu = () => {
 
     let handleColorActive = () =>{
         let color;
+
+        
         if(localStorage.getItem("theme-color")){
             color = localStorage.getItem("theme-color")
         }else{

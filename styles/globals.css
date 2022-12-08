@@ -111,18 +111,14 @@
   --second-color-soft: var(--second-color-orange);
 }
 
-*::-moz-selection { /* Code for Firefox */
-  background: var(--main-color);
-}
-
-*::selection {
-  background: var(--main-color);
-}
-
 * {
   margin: 0;
   font-family: "Poppins";
   padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   box-sizing: border-box;
   text-decoration: none;
 }
@@ -234,7 +230,6 @@ section:nth-of-type(even) .card svg {
   color: var(--main-bg);
 }
 section .about-content,
-section .serv-content,
 section .skills-content,
 section .contact-content {
   display: flex;
@@ -1230,8 +1225,13 @@ aside.theme-color-menu .colors-wrapper .colors-list li.crimson div {
 }
 
 /* services section styling */
+.services .serv-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
 .services .serv-content .card {
-  width: calc(33% - 20px);
   min-height: 250px;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
@@ -1743,10 +1743,6 @@ section .card .box a {
   .about .about-content .right {
     flex: 100%;
   }
-  .services .serv-content .card {
-    width: calc(50% - 10px);
-    margin-bottom: 20px;
-  }
   .skills .skills-content .card:hover img,
 .skills .skills-content .card.vtex:hover img {
     transform: translateY(0) scale(0.8);
@@ -1825,6 +1821,12 @@ section .card .box a {
   }
   .skills .skills-content .card.vtex img {
     transform: scale(1.2);
+  }
+}
+@media (max-width: 740px) {
+  .services .serv-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
   }
 }
 @media (max-width: 690px) {

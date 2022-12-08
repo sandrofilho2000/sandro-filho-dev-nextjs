@@ -16,9 +16,6 @@ const Menu = () => {
 
     let handleMenuOpened = (e) =>{
         switch (e.detail) {
-            case 1:{
-                open_warning()
-            }
             case 2: {
                 if(menuOpened === 'active'){
                     setMenuOpenend("")
@@ -27,7 +24,8 @@ const Menu = () => {
                 }
             }
         }
-
+        open_warning()
+        
     }
 
     useEffect(() => {

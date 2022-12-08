@@ -1,8 +1,5 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faC, faLaptop } from '@fortawesome/free-solid-svg-icons'
-import { faCode } from '@fortawesome/free-solid-svg-icons'
-import { faPaintBrush} from '@fortawesome/free-solid-svg-icons'
+import { FaCode, FaLaptop, FaPaintBrush, FaChessBishop, FaShoppingBag, FaGoogle} from 'react-icons/fa'
 
 const Services = () => {
     return (
@@ -12,25 +9,32 @@ const Services = () => {
             <div className="serv-content">
                 <div className="card">
                     <div className="box">
-                        <FontAwesomeIcon icon={faPaintBrush} />
+                        <FaPaintBrush/>
                         <div className="text">Web Design</div>
                         <p>Buscarei a solução ideal para o seu negócio, com designs detalhistas e modernos</p>
                     </div>
                 </div>
                 <div className="card">
                     <div className="box">
-                        <FontAwesomeIcon icon={faCode} />
-                        <div className="text">Criação de Sites</div>
+                        <FaCode/>
+                        <div className="text">Evolução/Criação de Sites</div>
                         <p>HTML, CSS e JS sempre foram meus aliados e com eles, escreverei código que irá trazer seu
                             projeto à vida</p>
                     </div>
                 </div>
                 <div className="card">
                     <div className="box">
-                        <FontAwesomeIcon icon={faLaptop} />
+                        <FaLaptop/>
                         <div className="text">Sistemas</div>
                         <p>Integração com banco de dados em sistemas PHP podem criar algo incrível e útil. Pode
                             acreditar!</p>
+                    </div>
+                </div>
+                <div className="card">
+                    <div className="box">
+                        <FaGoogle/>
+                        <div className="text">SEO</div>
+                        <p>Usando as melhores praticas de SEO, colocarei seu site nas primeiras posições do Google</p>
                     </div>
                 </div>
             </div>

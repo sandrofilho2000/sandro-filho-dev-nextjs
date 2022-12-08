@@ -13,7 +13,7 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
     ssr: false,
 });
 
-export const Blog = () => {
+const Blog = () => {
 
     var posts = [
         {
@@ -216,6 +216,6 @@ export const Blog = () => {
     )
 }
 
-
+export default Blog
 
 
