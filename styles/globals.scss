@@ -1530,7 +1530,7 @@ section{
             text-align: center;
             overflow: hidden;
             transition: all 0.3s ease;
-
+            min-height: 410px;
             &:hover {
                 background: var(--main-color);
 
@@ -1573,6 +1573,10 @@ section{
             transition: all 0.3s ease;
         }
     }
+}
+     
+.owl-carousel .owl-stage-outer{
+    padding: 50px 0;
 }
 
 

@@ -1355,6 +1355,7 @@ section .card .box a {
   text-align: center;
   overflow: hidden;
   transition: all 0.3s ease;
+  min-height: 410px;
 }
 .portfolio .portfolio-content .card:hover {
   background: var(--main-color);
@@ -1390,6 +1391,10 @@ section .card .box a {
   object-fit: cover;
   min-height: 176px;
   transition: all 0.3s ease;
+}
+
+.owl-carousel .owl-stage-outer {
+  padding: 50px 0;
 }
 
 /* blog section styling */
