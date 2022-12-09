@@ -1,14 +1,9 @@
+/* eslint-disable @next/next/next-script-for-ga */
 import Head from 'next/head'
 import React from 'react'
 
 const Head_JSX = () => {
-    function analytics(){
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {dataLayer.push(arguments); }
-        gtag('js', new Date());
 
-        gtag('config', 'G-QD7F8DJ669');
-    }
     return (
         <Head>
             <meta charset="utf-8" />
@@ -16,19 +11,6 @@ const Head_JSX = () => {
             <meta content="width=device-width, initial-scale=1.0" name="viewport" />
             <meta content="Sandro Filho DEV | Front End" name="description" />
             <link href="https://sandrofilhodev.com" rel="canonical" />
-
-            {(function (w, d, s, l, i) {
-                w[l] = w[l] || []; w[l].push({
-                    'gtm.start':
-                        new Date().getTime(), event: 'gtm.js'
-                }); var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-PGZLDCW')}
-
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-QD7F8DJ669"></script>
-
-            {analytics()}
 
             <meta content="index" name="robots" />
             {/* <!-- HTML Meta Tags --> */}

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 
-import profile from '../../public/assets/images/profile-1.webp'
+import profile from '../../public/assets/images/me.webp'
 import Typed from "typed.js";
 
 const About = () => {

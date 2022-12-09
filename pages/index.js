@@ -40,7 +40,7 @@ export default function Home() {
     <div className={styles.container}>
       <noscript>
         <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PGZLDCW"
-          style="display:none;visibility:hidden" width="0">
+          style={{display:"none", visibility:"hidden"}} width="0">
         </iframe>
       </noscript>
       <Head_JSX />

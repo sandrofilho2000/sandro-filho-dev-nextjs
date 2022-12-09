@@ -1224,6 +1224,11 @@ aside.theme-color-menu .colors-wrapper .colors-list li.crimson div {
   display: none !important;
 }
 
+.glare-wrapper {
+  border-radius: 6px !important;
+  z-index: 99;
+}
+
 /* services section styling */
 .services .serv-content {
   display: grid;
@@ -1237,6 +1242,7 @@ aside.theme-color-menu .colors-wrapper .colors-list li.crimson div {
   backdrop-filter: blur(5px);
   text-align: center;
   border-radius: 6px;
+  height: 100%;
   padding: 20px 25px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1734,6 +1740,9 @@ section .card .box a {
   }
   .about .about-content .column {
     width: 100%;
+  }
+  .services .serv-content .card .text {
+    min-height: 80px;
   }
   .about .about-content .left {
     display: flex;
