@@ -1,9 +1,10 @@
 import '../styles/globals.css'
-import GoogleAnalytics from '@bradgarropy/next-google-analytics'
+
 import AppContext from '../components/AppContext'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { useState } from 'react'
+import Script from 'next/script'
 
 config.autoAddCss = false
 
@@ -16,7 +17,20 @@ function MyApp({ Component, pageProps }) {
     <AppContext.Provider value={{ themeContext, setThemeContext, colorContext, setColorContext }}>
       <Component {...pageProps} />
 
-    <GoogleAnalytics  measurementId="G-QD7F8DJ669"/>
+      <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-QD7F8DJ669" />
+
+      <Script id="google-analytics" strategy="afterInteractive" >
+        {
+          `
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-QD7F8DJ669');
+    
+          `
+        }
+      </Script>
 
     </AppContext.Provider>
   )
