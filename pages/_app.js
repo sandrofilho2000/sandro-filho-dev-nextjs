@@ -1,6 +1,6 @@
 import '../styles/globals.css'
-import { createContext } from 'react'
-import  AppContext  from '../components/AppContext'
+import GoogleAnalytics from '@bradgarropy/next-google-analytics'
+import AppContext from '../components/AppContext'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { useState } from 'react'
@@ -13,8 +13,11 @@ function MyApp({ Component, pageProps }) {
   const [colorContext, setColorContext] = useState("")
 
   return (
-    <AppContext.Provider value={{themeContext, setThemeContext, colorContext, setColorContext}}>
+    <AppContext.Provider value={{ themeContext, setThemeContext, colorContext, setColorContext }}>
       <Component {...pageProps} />
+
+    <GoogleAnalytics  measurementId="G-QD7F8DJ669"/>
+
     </AppContext.Provider>
   )
 }
