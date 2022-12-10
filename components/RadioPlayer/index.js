@@ -154,7 +154,7 @@ const RadioPlayer = () => {
         update_radio_container(playing_now)
     }
 
-    let radio_player_pause = () => {
+    let radio_player_pause = () => { 
         radio_player_container.current.classList.add("paused")
         radio_player_container.current.classList.remove("playing")
         var vol = 0.20;
@@ -223,6 +223,7 @@ const RadioPlayer = () => {
         }
     }
 
+
     let radio_play_next = () => {
         var playing_now = setList.filter((item) => {
             return item.id == radio_player.current.getAttribute("song_id")
@@ -232,16 +233,26 @@ const RadioPlayer = () => {
         var playing_next_index = playing_now_index + 1 >= setList.length ? 0 : playing_now_index + 1
         var playing_next = setList[playing_next_index]
 
-        console.log(playing_now_index, playing_next_index)
-
-
         radio_player.current.setAttribute("src", playing_next.path)
         radio_player.current.setAttribute("song_id", playing_next.id)
 
-        radio_player_play()
 
         update_radio_container(playing_next)
         radio_player_container.current.classList.remove("paused")
+
+        setTimeout(()=>{
+            radio_player_play()
+        }, 100)
+
+    }
+
+    let radio_play_ended = () => {
+        radio_play_next()
+        radio_player_container.current.classList.add("next_song")
+        setTimeout(()=>{
+            radio_player_container.current.classList.remove("next_song")
+            radio_player_container.current.classList.add("playing")
+        }, 10000)
     }
 
     let radio_play_prev = () => {
@@ -313,7 +324,7 @@ const RadioPlayer = () => {
                 </div>
             </div>
 
-            <audio ref={radio_player} style={{display: "none"}} onPause={()=>{radio_player_pause()}} onPlay={()=>{radio_player_play()}} controls initial-volume='.4'>
+            <audio ref={radio_player} style={{display: "none"}} onPlay={()=>{radio_player_play()}} onEnded={()=>{radio_play_ended()}} controls initial-volume='.4'>
                 <source type="audio/mpeg"/>
             </audio>
         </div>
