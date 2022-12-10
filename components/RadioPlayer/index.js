@@ -324,7 +324,7 @@ const RadioPlayer = () => {
                 </div>
             </div>
 
-            <audio ref={radio_player} style={{display: "none"}} onPlay={()=>{radio_player_play()}} onEnded={()=>{radio_play_ended()}} controls initial-volume='.4'>
+            <audio ref={radio_player} style={{display: "none"}} onEnded={()=>{radio_play_ended()}} controls initial-volume='.4'>
                 <source type="audio/mpeg"/>
             </audio>
         </div>
