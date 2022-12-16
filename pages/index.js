@@ -1,20 +1,18 @@
 import { useContext, useEffect } from 'react'
 import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
-import About from '../components/About'
-import Services from '../components/Services'
-import styles from '../styles/Home.module.css'
-import Skills from '../components/Skills'
-import Portfolio from '../components/Portfolio'
-import Blog from '../components/Blog'
-import Contact from '../components/Contact'
-import Menu from '../components/Menu'
-import ThemeMenu from '../components/ThemeMenu'
+import Hero from '../components/HomePage/Hero'
+import About from '../components/HomePage/About'
+import Services from '../components/HomePage/Services'
+import Skills from '../components/HomePage/Skills'
+import Portfolio from '../components/HomePage/Portfolio'
+import Blog from '../components/HomePage/Blog'
+import Contact from '../components/HomePage/Contact'
+import Menu from '../components/HomePage/Menu'
+import ThemeMenu from '../components/HomePage/ThemeMenu'
 import AppContext from '../components/AppContext'
-import RadioPlayer from '../components/RadioPlayer'
-import Warning from '../components/Warning'
-import Head from 'next/head'
-import Head_JSX from '../components/Head'
+import RadioPlayer from '../components/HomePage/RadioPlayer'
+import Warning from '../components/HomePage/Warning'
+import Head_JSX from '../components/HomePage/Head'
 
 
 export default function Home() {
@@ -37,7 +35,7 @@ export default function Home() {
   }, [context])
 
   return (
-    <div className={styles.container}>
+    <div>
       <noscript>
         <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PGZLDCW"
           style={{display:"none", visibility:"hidden"}} width="0">

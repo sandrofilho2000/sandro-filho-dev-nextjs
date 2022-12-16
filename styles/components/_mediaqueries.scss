@@ -1,0 +1,315 @@
+/* responsive media query start */
+@media (max-width: 1300px) {
+    .hero .max-width {
+        margin-left: 0px;
+    }
+    .hero .particles_container{
+        right: 5%;
+    }
+}
+
+@media (max-width: 1104px) {
+    .about .about-content .left img {
+        height: 350px;
+        width: 350px;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero .particles_container {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    section .max-width {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 947px) {
+    .menu-btn {
+        display: none;
+        z-index: 999;
+    }
+
+    .menu-btn i.active:before {
+        content: "\f00d";
+    }
+
+    .navbar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar .menu.active {
+        left: 0;
+    }
+
+    .navbar .menu lsvg {
+        display: block;
+    }
+
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+
+    .hero .hero-content .text-2 {
+        font-size: 70px;
+    }
+
+    .hero .hero-content .text-3 {
+        font-size: 35px;
+    }
+
+    .hero .hero-content a {
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+
+    section .max-width {
+        max-width: 930px;
+    }
+
+    .about .about-content .column {
+        width: 100%;
+    }
+
+    .services .serv-content .card .text{
+        min-height: 80px;
+    }
+
+    .about .about-content .left {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+
+    .about .about-content .right {
+        flex: 100%;
+    }
+
+
+    .skills .skills-content .card:hover img,
+    .skills .skills-content .card.vtex:hover img{
+        transform: translateY(0) scale(0.8);
+    }
+
+    .skills .skills-content .card img {
+        transform: translateY(100%) scale(0.8);
+    }
+
+    .skills .skills-content .card.vtex:hover img{
+        transform: scale(1);
+    }
+
+    .skills .skills-content .column,
+    .contact .contact-content .column {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+
+    .blog {
+        .blog-content {
+            max-height: unset;
+            display: flex;
+            flex-direction: column;
+
+            .veja_tambem {
+                margin-top: 50px;
+                padding: 0px;
+                .owl-stage{
+                    display: flex;
+                }
+
+                .cards_container {
+                    &.cards_container_desktop{
+                        display: none !important;
+                    }
+                    &.cards_container_mobile{
+                        display: block !important;
+                    }
+
+                    .card,
+                    .owl-item {
+                        margin: 0px 20px;
+
+                        &:first-of-type {
+                            margin-left: 0;
+                        }
+
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+
+                        .text_content {
+                            .text {
+                                min-height: 42px;
+                            }
+                        }
+
+                        &.cloned:last-of-type{
+                            position: absolute;
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width: 800px) {
+    .portfolio .portfolio-content .card .text {
+        font-size: 18px;
+    }
+
+    .skills .title::after {
+        content: "No que programo";
+    }
+
+    .skills .skills-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skills .skills-content .card img {
+        width: 80%;
+        opacity: 1;
+        transform: scale(0.8);
+    }
+
+    .skills .skills-content .card {
+        max-height: 200px;
+        min-height: 200px;
+    }
+
+    .skills .skills-content .card svg {
+        display: none;
+    }
+
+    .skills .skills-content .card.vtex img {
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 740px) {
+    .services .serv-content{
+        grid-template-columns: 1fr ;
+        grid-template-rows:  1fr;
+    }
+}
+
+@media (max-width: 690px) {
+    .hero .particles_container {
+        transform: translateY(-50%) translateX(-50%) scale(0.5);
+    }
+
+    section .max-width {
+        padding: 0 23px;
+    }
+
+    .hero .hero-content .text-2 {
+        font-size: 60px;
+    }
+
+    .hero .hero-content .text-3 {
+        font-size: 32px;
+        min-height: 120px;
+    }
+
+    .hero .hero-content a {
+        font-size: 20px;
+    }
+
+    .services .serv-content .card {
+        width: 100%;
+    }
+
+    .about .about-content .left img {
+        width: 310px;
+        height: 310px;
+    }
+
+
+    .skills .skills-content .card {
+        min-height: 200px;
+        max-height: 200px;
+        padding: 10px 5px;
+    }
+
+
+}
+
+@media (max-width: 500px) {
+    .warning {
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .warning.scroll_show {
+        right: 30px;
+        bottom: 90px;
+    }
+
+    .warning::before {
+        content: "Toque no + duas vezes para abrir o menu";
+    }
+
+    .navbar {
+        height: 70px;
+    }
+
+    .navbar .logo a {
+        font-size: 22px;
+    }
+
+    .hero .hero-content .text-2 {
+        font-size: 50px;
+    }
+
+    .hero .hero-content .text-3 {
+        font-size: 27px;
+    }
+
+    .about .about-content .right .text {
+        font-size: 19px;
+    }
+
+    .contact .right form .fields {
+        flex-direction: column;
+    }
+
+    .contact .right form .name,
+    .contact .right form .email {
+        margin: 0;
+    }
+
+    .scroll-up-btn {
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+
+
+}
+
+@media (max-width: 350px) {
+    .navbar .logo a {
+        font-size: 25px;
+    }
+}

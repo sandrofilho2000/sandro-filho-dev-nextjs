@@ -1,0 +1,57 @@
+/* services section styling */
+.services {
+    .serv-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+
+        .card {
+            min-height: 250px;
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            text-align: center;
+            border-radius: 6px;
+            height: 100%;
+            padding: 20px 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: var(--main-color);
+
+                .box {
+                    transform: scale(1.05);
+                }
+
+                svg,
+                .text,
+                p {
+                    color: white
+                }
+            }
+
+
+            .box {
+                transition: all 0.3s ease;
+            }
+
+            svg {
+                font-size: 50px;
+                color: var(--main-color);
+                transition: color 0.3s ease;
+            }
+
+            .text {
+                font-size: 25px;
+                font-weight: 500;
+                margin: 10px 0 7px 0;
+            }
+
+            p {
+                color: var(--txt-color);
+            }
+        }
+    }
+
+}

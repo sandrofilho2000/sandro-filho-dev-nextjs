@@ -1,0 +1,67 @@
+@keyframes showup {
+    100% {
+        pointer-events: initial;
+        opacity: 1;
+        z-index: 9;
+    }
+}
+
+
+@keyframes music_wave {
+    50% {
+        height: 40%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+
+@keyframes tilt-in-bottom-1 {
+    0% {
+        -webkit-transform: rotateY(30deg) translateY(300px) skewY(-30deg);
+        transform: rotateY(30deg) translateY(300px) skewY(-30deg);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+        transform: rotateY(0deg) translateY(0) skewY(0deg);
+        opacity: 1;
+    }
+}
+
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+        border-color: transparent transparent var(--main-color) transparent;
+    }
+
+    50% {
+        border-color: transparent transparent var(--txt-color) transparent;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        border-color: transparent transparent var(--main-color) transparent;
+    }
+}
+
+
+@keyframes animate-reverse {
+    0% {
+        transform: rotate(0deg);
+        border-color: transparent transparent var(--txt-color) transparent;
+    }
+
+    50% {
+        border-color: transparent transparent var(--main-color) transparent;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        border-color: transparent transparent var(--txt-color) transparent;
+    }
+}

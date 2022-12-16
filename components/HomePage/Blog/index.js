@@ -1,7 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import dynamic from "next/dynamic";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import Link from 'next/link';
 
 var $ = require("jquery");
 if (typeof window !== "undefined") {
@@ -189,8 +192,8 @@ const Blog = () => {
                                     return (
                                         <div key={index} width="1980" height="180" className="card">
                                         <img src={item.img}
-                                            title="4 Oportunidades para Melhorar a Velocidade do seu"
-                                            alt="4 Oportunidades para Melhorar a Velocidade do seu"/>
+                                            title={item.headline}
+                                            alt={item.headline}/>
                                         <div className="text_content">
                                             <div className="text blog_headline">{item.headline}</div>
                                             <p className="content">
@@ -211,6 +214,7 @@ const Blog = () => {
                     </div>
                 </div>
             </div>
+            <Link className='goToBlog' href="/blog">Acessar blog</Link>
         </div>
     </section>
     )
