@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { FaMoon, FaSun } from 'react-icons/fa'
-import AppContext from '../AppContext'
+import AppContext from '../../AppContext'
 
 const ThemeMenu = () => {
 

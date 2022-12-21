@@ -6,8 +6,8 @@ const Head_JSX = () => {
 
     return (
         <Head>
-            <meta charset="utf-8" />
-            <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+            <meta charSet="utf-8" />
+            <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
             <meta content="width=device-width, initial-scale=1.0" name="viewport" />
             <meta content="Sandro Filho DEV | Front End" name="description" />
             <link href="https://sandrofilhodev.com" rel="canonical" />
@@ -19,10 +19,10 @@ const Head_JSX = () => {
                 content="Tire sua ideia do papel, agenda uma call hoje mesmo e tenha um site rápido, ágil e campeão de clicks!" />
 
             {/* <!-- Google / Search Engine Tags --> */}
-            <meta itemprop="name" content="Sandro Filho DEV | Front End" />
-            <meta itemprop="description"
+            <meta itemProp="name" content="Sandro Filho DEV | Front End" />
+            <meta itemProp="description"
                 content="Tire sua ideia do papel, agenda uma call hoje mesmo e tenha um site rápido, ágil e campeão de clicks!" />
-            <meta itemprop="image" content="	https://sandro-filho-dev-nextjs.vercel.app/_next/static/media/banner-dark-crimson.044ad266.webp" />
+            <meta itemProp="image" content="	https://sandro-filho-dev-nextjs.vercel.app/_next/static/media/banner-dark-crimson.044ad266.webp" />
 
             {/* <!-- Facebook Meta Tags --> */}
             <meta property="og:url" content="https://sandrofilhodev.com" />
