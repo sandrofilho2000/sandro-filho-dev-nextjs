@@ -162,7 +162,6 @@ const RadioPlayer = () => {
         var vol = 0.20;
         var initial_vol = radio_player.current.getAttribute("initial-volume")
         var interval = 40;
-        console.log("RADIO PAUSE")
         radio_player.current.volume = vol >= initial_vol ? initial_vol : vol;
         var fadeout = setInterval(
             function () {
@@ -186,8 +185,6 @@ const RadioPlayer = () => {
         var initial_vol = radio_player.current.getAttribute("initial-volume")
         var interval = 40;
         radio_player.current.volume = vol;
-
-        console.log("RADIO PLAY")
 
         radio_player.current.play()
         var fadeout = setInterval(

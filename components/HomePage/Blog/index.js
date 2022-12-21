@@ -16,6 +16,7 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
     ssr: false,
 });
 
+
 const Blog = () => {
 
     var posts = [

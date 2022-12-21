@@ -46,7 +46,6 @@ export default function Home() {
       <Menu />
       <ThemeMenu />
       <Navbar />
-      <RadioPlayer />
       <Hero />
       <About />
       <Services />

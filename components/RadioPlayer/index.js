@@ -1,6 +1,12 @@
 import React, { useEffect, useRef } from 'react'
 import { FaMusic, FaBackward, FaPause, FaPlay, FaForward } from 'react-icons/fa'
+import wait_for_you from './assets/songs/Wait for you.mp3'
+import ocean from './assets/songs/ocean.mp3'
+
 const RadioPlayer = () => {
+
+    var wait_for_you = new Audio(wait_for_you);
+    var ocean = new Audio(wait_for_you);
 
     const setList = [
 
@@ -10,7 +16,7 @@ const RadioPlayer = () => {
             name: "Wait for you",
             artist: "Kurt Stewart",
             cover: "./assets/images/song_covers/wait for you.webp",
-            path: "./assets/songs/Wait for you.mp3?v=10"
+            path: wait_for_you
         },
         {
             id: 1,
@@ -18,7 +24,7 @@ const RadioPlayer = () => {
             name: "Ocean",
             artist: "Thaehan",
             cover: "./assets/images/song_covers/ocean.webp",
-            path: "./assets/songs/Ocean.mp3?v=10"
+            path: ocean
         }
         ,
         {
@@ -216,7 +222,6 @@ const RadioPlayer = () => {
     
     let handle_radio_player_click_init = () =>{
         var rd_container = radio_player_container.current
-        console.log(rd_container)
         if (radio_player_container.current.classList.contains("not_playing")) {
             radio_player_container.current.classList.remove("not_playing")
             radio_player_play()
@@ -231,9 +236,6 @@ const RadioPlayer = () => {
         var playing_now_index = playing_now[0].index
         var playing_next_index = playing_now_index + 1 >= setList.length ? 0 : playing_now_index + 1
         var playing_next = setList[playing_next_index]
-
-        console.log(playing_now_index, playing_next_index)
-
 
         radio_player.current.setAttribute("src", playing_next.path)
         radio_player.current.setAttribute("song_id", playing_next.id)

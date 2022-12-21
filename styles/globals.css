@@ -1539,7 +1539,7 @@ aside.theme-color-menu .colors-wrapper .colors-list li.crimson div {
   font-size: 17px;
   transform: translateX(-50%) translateY(30%);
   color: white;
-  display: block;
+  display: none;
   padding: 5px;
   border-radius: 6px;
   background-color: var(--main-color);
@@ -2025,6 +2025,7 @@ section.heroSlider .owl-theme .owl-dots {
 .blogPosts .postsWrapper .postsList .post .text_content .authorDate {
   color: var(--txt-color);
   font-size: 12px;
+  margin-top: 8px;
 }
 .blogPosts .postsWrapper .postsList .post .text_content .authorDate span {
   margin: 0 10px;
@@ -2070,8 +2071,71 @@ section.heroSlider .owl-theme .owl-dots {
 }
 .blogPosts .postsWrapper .mostReads .post .text_content {
   padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.blogPosts .postsWrapper .mostReads .post .text_content * {
+  font-size: 13px;
+  font-weight: normal;
 }
 .blogPosts .postsWrapper .mostReads .post .blog_headline {
   font-weight: bold;
   font-size: 16px;
+}
+
+.blogPostPage .postPageCover {
+  display: flex;
+}
+.blogPostPage .postPageCover img {
+  height: 100%;
+  width: 100%;
+}
+.blogPostPage section.main {
+  padding: 0;
+  background-color: var(--second-bg);
+  padding: 20px;
+  padding-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.blogPostPage section.main h1 {
+  color: var(--txt-color);
+  margin: 0 auto;
+  text-align: center;
+}
+.blogPostPage section.main .postPageContent {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px 40px;
+  background-color: var(--main-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: 6px;
+  -webkit-user-select: initial !important;
+     -moz-user-select: initial !important;
+      -ms-user-select: initial !important;
+          user-select: initial !important;
+}
+.blogPostPage section.main .postPageContent * {
+  color: var(--txt-color);
+}
+.blogPostPage section.main .postPageContent h2 {
+  margin: 10px 0;
+}
+.blogPostPage section.main .postPageContent p {
+  margin-bottom: 30px;
+}
+.blogPostPage section.main .backToBlog {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+.blogPostPage section.main .backToBlog svg {
+  font-size: 24px;
+  margin-right: 10px;
 }/*# sourceMappingURL=globals.css.map */
