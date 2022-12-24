@@ -3,6 +3,7 @@ import React from 'react'
 import dynamic from "next/dynamic";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import Link from 'next/link';
 // This is for Next.js. On Rect JS remove this line
 
 var $ = require("jquery");
@@ -15,7 +16,7 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
     ssr: false,
 });
 
-var posts = [
+/* var posts = [
     {
         "headline": "O que é o TabNews? Conheça a nova comunidade de\n                                    Tecnologia",
         "content": "TabNews é uma plataforma em formato de Fóruns para a comunidade de Tecnologia\n                                    compartilhar\n                                    conteúdo de valor, tirar dúvidas e interagirem.\n\n                                    Idealizada pelo desenvolvedor e youtuber: Filipe Deschamps, a plataforma está\n                                    disponível\n                                    em\n                                    TabNews, possui código aberto no GitHub e já conta com mais de 40 contribuidores.",
@@ -45,16 +46,16 @@ var posts = [
         "link": "https://tavanoblog.com.br/post/vtex-fast-store",
         "main_post": false
     }
-]
+] */
 
-const HeroSlider = () => {
+const HeroSlider = ({ posts }) => {
 
     const options = {
         margin: 10,
         responsiveClass: true,
         nav: true,
         dots: true,
-        autoplay: true,
+        autoplay: false,
         navClass: ["owl-prev", "owl-next"],
         navText: [
             '',
@@ -75,36 +76,41 @@ const HeroSlider = () => {
 
     return (
         <section className='heroSlider'>
-                        <OwlCarousel
-                            className="owl-theme"
-                            loop
-                            margin={4}
-                            animateOut= 'fadeOut'
-                            autoplayTimeout={12000}
-                            autoplayHoverPause={false}
-                            nav={true}
-                            dots={false}
-                            animateIn={true}
-                            {...options}
-                        >
-                            {posts.map((item, index)=>{
-                                if(!item.main_post){
-                                    return (
-                                        <div key={index} className="slideItem" style={{backgroundImage: `url(${item.img})`}}>
-                                        <a href={item.link} className="text_content">
-                                            <div className="text blog_headline">{item.headline}</div>
-                                            <p className="content">
-                                            {item.content}
-                                            </p>
-                                            <a href={item.link} className="cta">
-                                                Ler mais
-                                            </a>
-                                        </a>
+            <OwlCarousel
+                className="owl-theme"
+                loop
+                margin={4}
+                animateOut='fadeOut'
+                autoplayTimeout={12000}
+                autoplayHoverPause={false}
+                nav={true}
+                dots={false}
+                animateIn={true}
+                {...options}
+            >
+                {posts.map((item, index) => {
+                    if (index < 3) {
+                        return (
+                            <div key={index} className="slideItem" style={{ backgroundImage: `url(${item.coverPhoto.url})` }}>
+                                <div className="post">
+                                    <div className="text blog_headline">{item.title}</div>
+
+                                    <div className="text_wrapper">
+
+                                        <div className="text blog_headline" title={item.title}>{item.title}</div>
+                                        <div className='text_content' dangerouslySetInnerHTML={{ __html: item.content.html }}></div>
+
+                                        <Link href={'/' + item.slug} className="cta">
+                                            Ler mais
+                                        </Link>
                                     </div>
-                                    )
-                                }
-                            })}
-                        </OwlCarousel>
+
+                                </div>
+                            </div>
+                        )
+                    }
+                })}
+            </OwlCarousel>
         </section>
     )
 }

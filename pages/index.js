@@ -1,4 +1,3 @@
-import { useContext, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/HomePage/Hero'
 import About from '../components/HomePage/About'
@@ -9,30 +8,46 @@ import Blog from '../components/HomePage/Blog'
 import Contact from '../components/HomePage/Contact'
 import Menu from '../components/HomePage/Menu'
 import ThemeMenu from '../components/HomePage/ThemeMenu'
-import AppContext from '../components/AppContext'
-import RadioPlayer from '../components/HomePage/RadioPlayer'
 import Warning from '../components/HomePage/Warning'
 import Head_JSX from '../components/HomePage/Head'
+import { GraphQLClient, gql } from "graphql-request";
 
+const graphcms = new GraphQLClient("https://api-sa-east-1.hygraph.com/v2/cl9yvfs8y2bdh01uk61941hvs/master")
 
-export default function Home() {
-
-  const context = useContext(AppContext)
-
-  useEffect(() => {
-    let currColor = localStorage.getItem("theme-color") ? localStorage.getItem("theme-color") : context.colorContext
-    let currTheme = localStorage.getItem("theme-mode") ? localStorage.getItem("theme-mode") : context.themeContext
-
-    if (!currColor) {
-      currColor = "crimson"
+const QUERY = gql`
+  {
+    posts{
+      id
+      title
+      datePublished
+      slug
+      content{
+        html
+      }
+      author{
+        name
+        avatar{
+          url
+        }
+      }
+      coverPhoto{
+        url
+      }
     }
-    if (!currTheme) {
-      currTheme = "dark"
-    }
+  }
+`
 
-    document.querySelector("body").setAttribute("theme-mode", `theme-mode-${currTheme}`)
-    document.querySelector("body").setAttribute("theme-color", `theme-color-${currColor}`)
-  }, [context])
+export async function getStaticProps() {
+    const { posts } = await graphcms.request(QUERY)
+    return {
+        props: {
+            posts
+        },
+        revalidate: 10,
+    }
+}
+
+export default function Home({posts}) {
 
   return (
     <div>
@@ -51,7 +66,7 @@ export default function Home() {
       <Services />
       <Skills />
       <Portfolio />
-      <Blog />
+      <Blog posts={posts} />
       <Contact />
     </div>
   )

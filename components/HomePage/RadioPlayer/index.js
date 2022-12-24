@@ -233,9 +233,6 @@ const RadioPlayer = () => {
         var playing_next_index = playing_now_index + 1 >= setList.length ? 0 : playing_now_index + 1
         var playing_next = setList[playing_next_index]
 
-        console.log(playing_now_index, playing_next_index)
-
-
         radio_player.current.setAttribute("src", playing_next.path)
         radio_player.current.setAttribute("song_id", playing_next.id)
 

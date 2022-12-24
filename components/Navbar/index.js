@@ -1,10 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
-import { FaPalette } from "react-icons/fa";
+import { FaPalette, FaSearch } from "react-icons/fa";
 
 const Navbar = ({sticky=false}) => {
     const [stickNav, setStickyNav] = useState("")
+    
+    const [search, setSearch] = useState(false)
+    const [searchActive, setSearchActive] = useState(false)
 
     let handleThemeMenuActive = () =>{
         document.querySelector(".theme-color-menu").classList.toggle("active")
@@ -25,16 +28,22 @@ const Navbar = ({sticky=false}) => {
             }
 
         }
+        if(window.location.pathname !== '/'){
+            setSearch(true)
+        }
     },[])
-    
+    console.log(search)
     return (
         <nav className={`navbar ${stickNav} ${sticky}`}>
+            {search && 
+                <FaSearch className='faSearch'/>
+            }
             <div className="max-width">
                 <h1>
                     <div className="logo"><Link href="/">Sandro<span> Filho DEV</span></Link></div>
                 </h1>
             </div>
-            <FaPalette onClick={()=>{handleThemeMenuActive()}}/>
+            <FaPalette className='faPalette' onClick={()=>{handleThemeMenuActive()}}/>
         </nav>
     )
 }

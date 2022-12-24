@@ -8,10 +8,15 @@ section.heroSlider .slideItem {
   width: 100vw;
   min-height: 600px;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
 }
-section.heroSlider .slideItem::before {
+section.heroSlider .slideItem .post {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+section.heroSlider .slideItem .post::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -19,7 +24,7 @@ section.heroSlider .slideItem::before {
   background: #202020;
   opacity: 0.2;
 }
-section.heroSlider .slideItem .text_content {
+section.heroSlider .slideItem .post .text_wrapper {
   position: absolute;
   z-index: 99;
   bottom: 15px;
@@ -27,16 +32,16 @@ section.heroSlider .slideItem .text_content {
   border-bottom-right-radius: 6px;
   width: 65%;
   padding: 10px;
-  color: white;
+  color: #fff;
   box-shadow: var(--box-shadow);
   background-color: var(--main-color);
 }
-section.heroSlider .slideItem .text_content .blog_headline {
-  color: white;
+section.heroSlider .slideItem .post .text_wrapper .blog_headline {
+  color: #fff;
   font-size: 18px;
   display: block;
   width: 95%;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #fff;
   margin-bottom: 15px;
   display: -webkit-box;
   text-overflow: ellipsis;
@@ -44,8 +49,11 @@ section.heroSlider .slideItem .text_content .blog_headline {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-section.heroSlider .slideItem .text_content .content {
-  color: white;
+section.heroSlider .slideItem .post .text_wrapper *:not([class]) {
+  display: none;
+}
+section.heroSlider .slideItem .post .text_wrapper p:nth-of-type(2) {
+  color: #fff;
   font-size: 12px;
   letter-spacing: 0.075rem;
   opacity: 0.9;
@@ -55,12 +63,12 @@ section.heroSlider .slideItem .text_content .content {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-section.heroSlider .slideItem .text_content .cta {
+section.heroSlider .slideItem .post .text_wrapper .cta {
   margin-top: 15px;
   width: 100%;
   text-align: right;
   display: block;
-  color: white;
+  color: #fff;
 }
 section.heroSlider .owl-carousel .owl-stage-outer {
   padding: 0px;

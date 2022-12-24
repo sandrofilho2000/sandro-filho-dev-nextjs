@@ -1,44 +1,58 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import { FaEye } from 'react-icons/fa'
 import moment from "moment";
 import 'moment/locale/pt-br'
 import Link from 'next/link';
+import Tilt from 'react-parallax-tilt'
 
 
-const Post = ({item}) => {
+export const Post = ({ item }) => {
+
+    const tiltOptions = {
+        perspective: 500,
+        glareEnable: true,
+        glareMaxOpacity: .2,
+        scale: 1,
+        max: 1,
+        tiltMaxAngleX: 1,
+        tiltMaxAngleY: 1,
+        glarePosition: "all",
+        gyroscope: true
+    }
+
     moment.locale('pt-br')
     return (
-        <Link key={item.id} href={'/posts/' + item.slug} className="post">
-            <img src={item.coverPhoto.url}
-                title={item.title}
-                alt={item.title} />
-            <div className="text_content">
-                <div className="text blog_headline">{item.title}</div>
-                <div className="authorDate">
+        <Tilt className="Tilt"
+            {...tiltOptions}
+        >
+            <Link href={'/' + item.slug} className="post">
+                <img src={item.coverPhoto.url}
+                    title={item.title}
+                    alt={item.title} />
+                <div className="text_wrapper">
+                    <div className="text blog_headline" title={item.title}>{item.title}</div>
+                    <div className="authorDateContent">
 
-                    <span>
-                        por: <span className='author'>Sandro Filho</span>
-                    </span>
 
-                    
-                    |
-                    <span>
-                        {moment(item.datePublished).format("MMM D")}
-                    </span>
+                        <div className='authorDate'>
+                            <span>
+                                por: <span className='author'>Sandro Filho</span>
+                            </span>
+                            |
+                            <span>
+                                {moment(item.datePublished).format("MMM D")}
+                            </span>
+                        </div>
+                        
 
-                    <div className='views'>
-                        <FaEye />
-                        <span className='views_span'>
-                            : 123
-                        </span>
+                        <div className='text_content' dangerouslySetInnerHTML={{ __html: item.content.html }}></div>
+
+
                     </div>
-
                 </div>
-            </div>
-        </Link>
+            </Link>
+
+        </Tilt>
 
     )
 }
-
-export default Post
