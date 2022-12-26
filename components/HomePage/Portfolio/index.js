@@ -16,6 +16,15 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
 let projects = [
     {
         "id": 0,
+        "name": "Real Life Dashboard",
+        "text": "Um jeito de restaurantes gerenciarem seus pedidos de uma forma fácil e descomplicada (Em breve)",
+        "img": "./assets/images/dashboard.webp",
+        "img_alt": "Real Life Dash Board",
+        "img_title": "Real Life Dash Board",
+        "link": "https://real-life-dashboard-mdhiobzce-sandrofilho2000.vercel.app/products"
+    },
+    {
+        "id": 0,
         "name": "Mulheres no front",
         "text": "Site criado para divulgação de um curso afirmativo para mulheres no mercado de T.I",
         "img": "./assets/images/mulheres_no_front.webp",

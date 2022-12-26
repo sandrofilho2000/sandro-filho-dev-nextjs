@@ -32,7 +32,7 @@ const Navbar = ({sticky=false}) => {
             setSearch(true)
         }
     },[])
-    console.log(search)
+
     return (
         <nav className={`navbar ${stickNav} ${sticky}`}>
             {search && 

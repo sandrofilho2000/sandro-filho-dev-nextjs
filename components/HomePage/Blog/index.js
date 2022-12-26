@@ -21,22 +21,28 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
 
 const Blog = ({ posts }) => {
     var main_post = posts[0]
+
     const options = {
-        margin: 0,
+        margin: 10,
         responsiveClass: true,
         nav: true,
         dots: true,
         autoplay: false,
+        center: true,
         smartSpeed: 300,
         navClass: ["owl-prev", "owl-next"],
+        navText: [
+            '',
+            '',
+        ],
         responsive: {
             0: {
                 items: 1,
             },
-            520: {
+            600: {
                 items: 2,
             },
-            800: {
+            1000: {
                 items: 3,
             }
         },
@@ -65,7 +71,7 @@ const Blog = ({ posts }) => {
                             }
                         </div>
 
-                        {/*                     <div className="cards_container cards_container_mobile">
+                                            <div className="cards_container cards_container_mobile">
                         <OwlCarousel
                             className="owl-theme"
                             loop
@@ -83,7 +89,7 @@ const Blog = ({ posts }) => {
                                 }
                             })}
                         </OwlCarousel>
-                    </div> */}
+                    </div>
                     </div>
                 </div>
                 <Link className='goToBlog' href="/blog">Acessar blog</Link>

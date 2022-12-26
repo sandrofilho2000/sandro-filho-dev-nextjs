@@ -1,1 +1,106 @@
-/*# sourceMappingURL=blogPostPage.css.map */
+.blogPostPage .postPageCover {
+  display: flex;
+}
+.blogPostPage .postPageCover img {
+  height: 100%;
+  max-height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+  width: 177.7777777778vw;
+}
+.blogPostPage section.main {
+  padding: 0;
+  background-color: var(--second-bg);
+  padding: 80px 20px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  align-items: baseline;
+}
+.blogPostPage section.main h1 {
+  color: var(--txt-color);
+  margin: 0 auto;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 34px;
+}
+.blogPostPage section.main .postPageContent {
+  max-width: 1200px;
+  width: 70%;
+  padding: 20px 40px;
+  background-color: var(--main-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: 6px;
+  -webkit-user-select: initial !important;
+     -moz-user-select: initial !important;
+      -ms-user-select: initial !important;
+          user-select: initial !important;
+}
+.blogPostPage section.main .postPageContent * {
+  color: var(--txt-color);
+}
+.blogPostPage section.main .postPageContent h2 {
+  margin: 10px 0;
+}
+.blogPostPage section.main .postPageContent p {
+  margin-bottom: 30px;
+  text-align: justify;
+}
+.blogPostPage section.main .backToBlog {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+}
+.blogPostPage section.main .backToBlog svg {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.main_post .Tilt {
+  height: 100%;
+}
+.main_post .Tilt a.post {
+  margin-bottom: 0;
+  height: 100%;
+}
+.main_post .Tilt a.post .text_wrapper .text.blog_headline {
+  font-size: 25px;
+}
+.main_post .Tilt a.post .text_wrapper .authorDateContent .text_content p:nth-of-type(2) {
+  font-size: 14px;
+  -webkit-line-clamp: 4;
+}
+
+.item_list .Tilt {
+  margin-bottom: 30px;
+}
+.item_list .Tilt a.post {
+  display: flex;
+}
+.item_list .Tilt a.post .text_wrapper .text.blog_headline {
+  width: 80%;
+}
+.item_list .Tilt a.post .authorDate {
+  display: flex;
+  font-size: 12px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+.item_list .Tilt a.post .authorDate span:first-of-type {
+  margin-right: 3px;
+}
+.item_list .Tilt a.post .authorDate span:last-of-type {
+  margin-left: 6px;
+}
+.item_list .Tilt a.post > img {
+  max-width: 260px;
+  width: 35%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=blogPostPage.css.map */

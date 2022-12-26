@@ -30,7 +30,8 @@ section.heroSlider{
                 bottom: 15px;
                 border-top-right-radius: 6px;
                 border-bottom-right-radius: 6px;
-                width: 65%;
+                width: 85%;
+                max-width: 1200px;
                 padding: 10px;
                 color: #fff;
                 box-shadow: var(--box-shadow);
@@ -89,5 +90,15 @@ section.heroSlider{
         z-index: 9;
         bottom: 10px;
         right: 10px;
+    }
+}
+
+@media screen and (max-width: 631px){
+    section.heroSlider .slideItem .post .text_wrapper{
+        bottom: 45px;
+    }
+    section.heroSlider .owl-theme .owl-dots{
+        left: 10px;
+        right: unset;
     }
 }
