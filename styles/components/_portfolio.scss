@@ -1,0 +1,58 @@
+/* portfolio section styling */
+.portfolio .title::after {
+    content: "O que já fiz";
+}
+
+.portfolio {
+    .portfolio-content {
+        .card {
+            border-radius: 6px;
+            padding: 25px 20px;
+            box-sizing: content-box;
+            text-align: center;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            min-height: 410px;
+            &:hover {
+                background: var(--main-color);
+
+                .box {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            min-height: 350px;
+        }
+
+        .text {
+            font-size: 25px;
+            font-weight: 500;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            margin: 10px 0 7px 0;
+            width: 90%;
+            min-height: 75px;
+            text-align: center;
+        }
+
+        p {
+            color: var(--txt-color);
+            min-height: 75px;
+        }
+
+        img {
+            -o-object-fit: cover;
+            object-fit: cover;
+            min-height: 176px;
+            transition: all 0.3s ease;
+        }
+    }
+}

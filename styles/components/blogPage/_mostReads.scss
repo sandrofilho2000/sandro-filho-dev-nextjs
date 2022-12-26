@@ -1,0 +1,35 @@
+.mostReads{
+    position: relative;
+    top: -64px;
+    width: 25%;
+
+    .Tilt{
+        max-width: 300px;
+        a.post{
+            .authorDate{
+                display: none;
+            }
+        
+            .text_wrapper{        
+                .text.blog_headline{
+                    font-size: 16px;
+                }
+
+                .authorDateContent{
+                    .text_content{
+                        margin-top: 10px;
+                        *{
+                            display: none;
+                        }
+            
+                        p:nth-of-type(2){
+                            -webkit-line-clamp: 5;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+
+}

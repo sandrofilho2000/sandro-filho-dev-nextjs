@@ -1,25 +1,25 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 
-import bgDarkCrimson from '../../public/assets/images/banner-dark-crimson.webp'
-import bgLightCrimson from '../../public/assets/images/banner-light-crimson.webp'
+import bgDarkCrimson from '../../../public/assets/images/banner-dark-crimson.webp'
+import bgLightCrimson from '../../../public/assets/images/banner-light-crimson.webp'
 
-import bgDarkRed from '../../public/assets/images/banner-dark-red.webp'
-import bgLightRed from '../../public/assets/images/banner-light-red.webp'
+import bgDarkRed from '../../../public/assets/images/banner-dark-red.webp'
+import bgLightRed from '../../../public/assets/images/banner-light-red.webp'
 
-import bgDarkGreen from '../../public/assets/images/banner-dark-green.webp'
-import bgLightGreen from '../../public/assets/images/banner-light-green.webp'
+import bgDarkGreen from '../../../public/assets/images/banner-dark-green.webp'
+import bgLightGreen from '../../../public/assets/images/banner-light-green.webp'
 
-import bgDarkOrange from '../../public/assets/images/banner-dark-orange.webp'
-import bgLightOrange from '../../public/assets/images/banner-light-orange.webp'
+import bgDarkOrange from '../../../public/assets/images/banner-dark-orange.webp'
+import bgLightOrange from '../../../public/assets/images/banner-light-orange.webp'
 
-import bgDarkBlue from '../../public/assets/images/banner-dark-blue.webp'
-import bgLightBlue from '../../public/assets/images/banner-light-blue.webp'
+import bgDarkBlue from '../../../public/assets/images/banner-dark-blue.webp'
+import bgLightBlue from '../../../public/assets/images/banner-light-blue.webp'
 
-import bgDarkCyan from '../../public/assets/images/banner-dark-cyan.webp'
-import bgLightCyan from '../../public/assets/images/banner-light-cyan.webp'
+import bgDarkCyan from '../../../public/assets/images/banner-dark-cyan.webp'
+import bgLightCyan from '../../../public/assets/images/banner-light-cyan.webp'
 
 
-import AppContext from '../AppContext'
+import AppContext from '../../AppContext'
 import Typed from "typed.js";
 
 
@@ -127,17 +127,14 @@ const Hero = () => {
         };
     }, [context])
 
-
     var listParticles = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5]
 
     var styling_dark_red = {
         backgroundImage: `url('${heroBg}')`,
     }
 
-    const style = { "--my-css-var": 10 }
-
     return (
-        <section className="home" id="home">
+        <section className="hero" id="hero">
             <div className="particles_container">
                 <div className="particles">
                     {
@@ -190,7 +187,7 @@ const Hero = () => {
             </div>
 
             <div className="max-width">
-                <div className="home-content">
+                <div className="hero-content">
                     <div className="text-1">Olá, meu nome é </div>
                     <div className="text-2">Sandro Filho</div>
                     <div className="text-3">Eu sou&nbsp; 

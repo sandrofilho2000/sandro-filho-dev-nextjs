@@ -1,0 +1,140 @@
+/* contact section styling */
+.contact .title::after {
+    content: "Faça contato";
+}
+
+.contact {
+    .contact-content {
+        .column {
+            width: calc(50% - 30px);
+        }
+
+        .right {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .text {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .left p {
+            text-align: justify;
+        }
+
+        .left .icons {
+            margin: 10px 0;
+        }
+
+        .row {
+            display: flex;
+            height: 65px;
+            align-items: center;
+        }
+
+        .row .info {
+            margin-left: 30px;
+        }
+
+        .row svg {
+            font-size: 25px;
+            color: var(--main-color);
+        }
+
+        .row img {
+            width: 25px;
+        }
+
+        .info .head {
+            font-weight: 500;
+            color: var(--main-color);
+        }
+    }
+
+    .right {
+
+        .fields {
+            display: flex;
+        }
+
+        .field,
+        .fields .field {
+            height: 45px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .textarea {
+            height: 80px;
+            width: 100%;
+        }
+
+        .name {
+            margin-right: 10px;
+        }
+
+        .email {
+            margin-left: 10px;
+        }
+
+        .field input,
+        .textarea textarea {
+            height: 100%;
+            width: 100%;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            outline: none;
+            padding: 0 15px;
+            font-size: 17px;
+            font-family: "Poppins", sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .field input:focus,
+        .textarea textarea:focus {
+            border-color: #b3b3b3;
+        }
+
+        .textarea textarea {
+            padding-top: 10px;
+            resize: none;
+        }
+
+        .button {
+            height: 47px;
+            width: 230px;
+        }
+
+        .button button {
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--main-color);
+            background: var(--main-color);
+            color: white;
+            outline: none;
+            font-size: 20px;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button button svg {
+            color: white;
+            font-size: 25px;
+            margin-left: 5px;
+            position: relative;
+            bottom: -5px;
+        }
+
+        .button button:hover,
+        .button button:hover svg {
+            color: var(--main-color) !important;
+            background: none;
+        }
+    }
+}

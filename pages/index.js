@@ -1,43 +1,56 @@
-import { useContext, useEffect } from 'react'
 import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
-import About from '../components/About'
-import Services from '../components/Services'
-import styles from '../styles/Home.module.css'
-import Skills from '../components/Skills'
-import Portfolio from '../components/Portfolio'
-import Blog from '../components/Blog'
-import Contact from '../components/Contact'
-import Menu from '../components/Menu'
-import ThemeMenu from '../components/ThemeMenu'
-import AppContext from '../components/AppContext'
-import RadioPlayer from '../components/RadioPlayer'
-import Warning from '../components/Warning'
-import Head from 'next/head'
-import Head_JSX from '../components/Head'
+import Hero from '../components/HomePage/Hero'
+import About from '../components/HomePage/About'
+import Services from '../components/HomePage/Services'
+import Skills from '../components/HomePage/Skills'
+import Portfolio from '../components/HomePage/Portfolio'
+import Blog from '../components/HomePage/Blog'
+import Contact from '../components/HomePage/Contact'
+import Menu from '../components/HomePage/Menu'
+import ThemeMenu from '../components/HomePage/ThemeMenu'
+import Warning from '../components/HomePage/Warning'
+import Head_JSX from '../components/HomePage/Head'
+import { GraphQLClient, gql } from "graphql-request";
 
+const graphcms = new GraphQLClient("https://api-sa-east-1.hygraph.com/v2/cl9yvfs8y2bdh01uk61941hvs/master")
 
-export default function Home() {
-
-  const context = useContext(AppContext)
-
-  useEffect(() => {
-    let currColor = localStorage.getItem("theme-color") ? localStorage.getItem("theme-color") : context.colorContext
-    let currTheme = localStorage.getItem("theme-mode") ? localStorage.getItem("theme-mode") : context.themeContext
-
-    if (!currColor) {
-      currColor = "crimson"
+const QUERY = gql`
+  {
+    posts{
+      id
+      title
+      datePublished
+      slug
+      content{
+        html
+      }
+      author{
+        name
+        avatar{
+          url
+        }
+      }
+      coverPhoto{
+        url
+      }
     }
-    if (!currTheme) {
-      currTheme = "dark"
-    }
+  }
+`
 
-    document.querySelector("body").setAttribute("theme-mode", `theme-mode-${currTheme}`)
-    document.querySelector("body").setAttribute("theme-color", `theme-color-${currColor}`)
-  }, [context])
+export async function getStaticProps() {
+    const { posts } = await graphcms.request(QUERY)
+    return {
+        props: {
+            posts
+        },
+        revalidate: 10,
+    }
+}
+
+export default function Home({posts}) {
 
   return (
-    <div className={styles.container}>
+    <div>
       <noscript>
         <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PGZLDCW"
           style={{display:"none", visibility:"hidden"}} width="0">
@@ -48,13 +61,12 @@ export default function Home() {
       <Menu />
       <ThemeMenu />
       <Navbar />
-      <RadioPlayer />
       <Hero />
       <About />
       <Services />
       <Skills />
       <Portfolio />
-      <Blog />
+      <Blog posts={posts} />
       <Contact />
     </div>
   )

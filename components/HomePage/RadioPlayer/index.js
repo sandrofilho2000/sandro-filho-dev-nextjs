@@ -1,12 +1,8 @@
-import React, { useEffect, useRef } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @next/next/no-img-element */
+import React, { useEffect, useRef, memo } from 'react'
 import { FaMusic, FaBackward, FaPause, FaPlay, FaForward } from 'react-icons/fa'
-import wait_for_you from './assets/songs/Wait for you.mp3'
-import ocean from './assets/songs/ocean.mp3'
-
 const RadioPlayer = () => {
-
-    var wait_for_you = new Audio(wait_for_you);
-    var ocean = new Audio(wait_for_you);
 
     const setList = [
 
@@ -16,7 +12,7 @@ const RadioPlayer = () => {
             name: "Wait for you",
             artist: "Kurt Stewart",
             cover: "./assets/images/song_covers/wait for you.webp",
-            path: wait_for_you
+            path: "./assets/songs/Wait for you.mp3?v=10"
         },
         {
             id: 1,
@@ -24,7 +20,7 @@ const RadioPlayer = () => {
             name: "Ocean",
             artist: "Thaehan",
             cover: "./assets/images/song_covers/ocean.webp",
-            path: ocean
+            path: "./assets/songs/Ocean.mp3?v=10"
         }
         ,
         {
@@ -160,7 +156,7 @@ const RadioPlayer = () => {
         update_radio_container(playing_now)
     }
 
-    let radio_player_pause = () => { 
+    let radio_player_pause = () => {
         radio_player_container.current.classList.add("paused")
         radio_player_container.current.classList.remove("playing")
         var vol = 0.20;
@@ -222,12 +218,11 @@ const RadioPlayer = () => {
     
     let handle_radio_player_click_init = () =>{
         var rd_container = radio_player_container.current
-        if (radio_player_container.current.classList.contains("not_playing")) {
-            radio_player_container.current.classList.remove("not_playing")
+        if (rd_container.classList.contains("not_playing")) {
+            rd_container.classList.remove("not_playing")
             radio_player_play()
         }
     }
-
 
     let radio_play_next = () => {
         var playing_now = setList.filter((item) => {
@@ -241,23 +236,10 @@ const RadioPlayer = () => {
         radio_player.current.setAttribute("src", playing_next.path)
         radio_player.current.setAttribute("song_id", playing_next.id)
 
+        radio_player_play()
 
         update_radio_container(playing_next)
         radio_player_container.current.classList.remove("paused")
-
-        setTimeout(()=>{
-            radio_player_play()
-        }, 100)
-
-    }
-
-    let radio_play_ended = () => {
-        radio_play_next()
-        radio_player_container.current.classList.add("next_song")
-        setTimeout(()=>{
-            radio_player_container.current.classList.remove("next_song")
-            radio_player_container.current.classList.add("playing")
-        }, 10000)
     }
 
     let radio_play_prev = () => {
@@ -282,9 +264,8 @@ const RadioPlayer = () => {
         radio_play_init()
     }, [])
 
-
     return (
-        <div ref={radio_player_container} className="radio_container not_playing" onMouseLeave={()=>{handle_radio_player_mouse_leaves()}} onMouseEnter={()=>{handle_radio_player_mouse_enters()}} onClick={()=>{handle_radio_player_click_init()}}>
+        <div ref={radio_player_container} className="radio_container not_playing" onEnded={()=>{radio_play_next()}} onMouseLeave={()=>{handle_radio_player_mouse_leaves()}} onMouseEnter={()=>{handle_radio_player_mouse_enters()}} onClick={()=>{handle_radio_player_click_init()}}>
 
             <div className="playing_icon">
                 <FaMusic/>
@@ -329,11 +310,11 @@ const RadioPlayer = () => {
                 </div>
             </div>
 
-            <audio ref={radio_player} style={{display: "none"}} onEnded={()=>{radio_play_ended()}} controls initial-volume='.4'>
+            <audio ref={radio_player} style={{display: "none"}} controls initial-volume='.4'>
                 <source type="audio/mpeg"/>
             </audio>
         </div>
     )
 }
 
-export default RadioPlayer
+export default memo (RadioPlayer)

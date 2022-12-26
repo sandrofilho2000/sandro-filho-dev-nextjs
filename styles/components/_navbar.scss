@@ -1,0 +1,82 @@
+/* navbar styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    height: 80px;
+    padding: 30px 0px;
+    font-family: "Ubuntu", sans-serif;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .max-width{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        justify-content: center;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo {
+        a {
+            color: var(--txt-color);
+            font-size: 35px;
+            font-weight: 600;
+            user-select: none;
+            span {
+                color: var(--main-color);
+                transition: all 0.3s ease;
+            }
+        }
+    }
+
+
+    svg {
+        cursor: pointer;
+        font-size: 35px;
+        position: absolute;
+        color: var(--main-color);
+        z-index: 10;
+
+        &.faSearch{
+            left: 10px;
+        }
+
+        &.faPalette{
+            right: 10px;
+        }
+    }
+
+    &.sticky {
+        padding: 15px 0px;
+        height: 90px;
+        background: var(--main-color);
+
+        svg,
+        .logo a span,
+        a {
+            color: white;
+        }
+
+    }
+
+    &.defSticky{
+        height: 70px;
+    }
+
+    section .max-width {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        justify-content: center;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}

@@ -1,8 +1,13 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
-import { FaPalette } from "react-icons/fa";
+import { FaPalette, FaSearch } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({sticky=false}) => {
     const [stickNav, setStickyNav] = useState("")
+    
+    const [search, setSearch] = useState(false)
+    const [searchActive, setSearchActive] = useState(false)
 
     let handleThemeMenuActive = () =>{
         document.querySelector(".theme-color-menu").classList.toggle("active")
@@ -12,23 +17,33 @@ const Navbar = () => {
         window.onscroll = () =>{
             if(window.pageYOffset > 20){
                 setStickyNav("sticky")
-                document.querySelector(".navigation").setAttribute("menu-sticky", stickNav)
+                try{
+                    document.querySelector(".navigation").setAttribute("menu-sticky", stickNav)
+                }catch{}
             }else{
                 setStickyNav("")
-                document.querySelector(".navigation").removeAttribute("menu-sticky")
+                try{
+                    document.querySelector(".navigation").removeAttribute("menu-sticky")
+                }catch{}
             }
 
         }
+        if(window.location.pathname !== '/'){
+            setSearch(true)
+        }
     },[])
-    
+
     return (
-        <nav className={`navbar ${stickNav}`}>
+        <nav className={`navbar ${stickNav} ${sticky}`}>
+            {search && 
+                <FaSearch className='faSearch'/>
+            }
             <div className="max-width">
                 <h1>
-                    <div className="logo"><a href="#">Sandro<span> Filho DEV</span></a></div>
+                    <div className="logo"><Link href="/">Sandro<span> Filho DEV</span></Link></div>
                 </h1>
             </div>
-            <FaPalette onClick={()=>{handleThemeMenuActive()}}/>
+            <FaPalette className='faPalette' onClick={()=>{handleThemeMenuActive()}}/>
         </nav>
     )
 }
