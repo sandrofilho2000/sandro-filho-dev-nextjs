@@ -1,17 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect } from 'react'
-import { FaArrowCircleLeft } from 'react-icons/fa';
+import React, { useContext, useEffect } from 'react'
+import { FaArrowCircleLeft, FaUser, FaCalendar } from 'react-icons/fa';
 import { GraphQLClient, gql } from "graphql-request";
 import Navbar from '../components/Navbar';
-import ThemeMenu from '../components/HomePage/ThemeMenu';
-import AppContext from '../components/AppContext';
+import moment from "moment";
+import 'moment/locale/pt-br'
+import ThemeMenu from '../components/ThemeMenu';
 import Contact from '../components/HomePage/Contact';
 import Link from 'next/link';
-import { Post } from '../components/BlogPage/BlogPosts/Post';
 import MostReads from '../components/BlogPage/MostReads';
 import Head_JSX from '../components/HomePage/Head';
 import PostPageCover from '../components/PostPage/PostPageCover';
 import PostPageContent from '../components/PostPage/PostPageContent';
+import AppContext from '../components/AppContext';
+import SearchPosts from '../components/BlogPage/SearchPosts';
 
 const graphcms = new GraphQLClient("https://api-sa-east-1.hygraph.com/v2/cl9yvfs8y2bdh01uk61941hvs/master")
 
@@ -94,28 +96,47 @@ export async function getStaticProps({ params }) {
 }
 
 const BlogPost = ({ post, posts }) => {
-
-  let mostReadsPosts = posts.filter((item)=>{
+  moment.locale('pt-br')
+  let mostReadsPosts = posts.filter((item) => {
     return item.id !== post.id
   })
 
   mostReadsPosts.length = 3
 
-  useEffect(() => {
-    document.title = post.title
-  });
-
+  const context = useContext(AppContext)
   return (
     <div className='blogPostPage'>
       <Head_JSX />
       <Navbar sticky="sticky defSticky" />
       <ThemeMenu />
-
-      <PostPageCover img={post.coverPhoto.url}/>
+      <div>
+        <h1 className='postTitle'>
+          {post.title}
+        </h1>
+      </div>
+      <div className='postAuthorDate'>
+        <div className='postAuthor'> 
+          <span className='icon'>
+            <FaUser />
+          </span>
+          <span>
+            Por: {post.author.name}
+          </span>
+        </div>
+        <div className='postCalendar'>
+          <span className='icon'>
+            <FaCalendar />
+          </span>
+          <span>
+            {moment(post.datePublished).format("DD/MM/yy")}
+          </span>
+        </div>
+      </div>
+      <PostPageCover img={post.coverPhoto.url} />
 
       <section className='main'>
-        <PostPageContent html={post.content.html} title={post.title}/>
-        <MostReads posts={mostReadsPosts}/>
+        <PostPageContent html={post.content.html} title={post.title} />
+        <MostReads posts={mostReadsPosts} />
         <Link className='backToBlog' href='../blog'>
           <FaArrowCircleLeft />
           <span>
@@ -125,7 +146,10 @@ const BlogPost = ({ post, posts }) => {
       </section>
 
       <Contact />
-
+      {
+        context.postSearchActiveContext &&
+        <SearchPosts posts={posts} searchInput={context.postSearchInputContext} />
+      }
     </div>
   )
 }

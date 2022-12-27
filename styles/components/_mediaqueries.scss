@@ -247,6 +247,13 @@
 }
 
 @media (max-width: 740px) {
+    .Tilt{
+        pointer-events: none;
+
+        a.post{
+            pointer-events: initial;
+        }
+    }
     .services .serv-content{
         grid-template-columns: 1fr ;
         grid-template-rows:  1fr;
@@ -269,6 +276,11 @@
         } 
 
     }
+
+    .blogPostPage h1.postTitle{
+        font-size: 27px;
+    }
+
     .blogPostPage section.main .postPageContent{
         padding: 20px 20px;
         h2{
@@ -412,4 +424,10 @@
     }
 
 
+}
+
+@media (max-width: 400px) {
+    .blogPostPage h1.postTitle{
+        font-size: 22px;
+    }
 }

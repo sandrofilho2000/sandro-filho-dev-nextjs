@@ -17,7 +17,6 @@ export const Post = ({ item }) => {
         tiltMaxAngleX: 1,
         tiltMaxAngleY: 1,
         glarePosition: "all",
-        gyroscope: true
     }
 
     moment.locale('pt-br')
@@ -36,7 +35,7 @@ export const Post = ({ item }) => {
 
                         <div className='authorDate'>
                             <span>
-                                por: <span className='author'>Sandro Filho</span>
+                                por: <span className='author'>{item.author.name}</span>
                             </span>
                             |
                             <span>

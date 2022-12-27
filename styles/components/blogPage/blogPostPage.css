@@ -1,5 +1,46 @@
+.blogPostPage {
+  background-color: var(--second-bg);
+  padding-top: 50px;
+}
+.blogPostPage h1.postTitle {
+  color: var(--txt-color);
+  margin: 50px auto;
+  text-align: center;
+  display: block;
+  font-size: 34px;
+  width: calc(100% - 40px);
+}
+.blogPostPage .postAuthorDate {
+  display: flex;
+  padding-left: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 30px;
+}
+.blogPostPage .postAuthorDate > div {
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.blogPostPage .postAuthorDate > div:last-of-type {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+}
+.blogPostPage .postAuthorDate span, .blogPostPage .postAuthorDate svg {
+  color: var(--txt-color);
+  display: inline-block;
+  align-items: center;
+}
+.blogPostPage .postAuthorDate span.icon {
+  height: 20px;
+  margin-right: 5px;
+}
 .blogPostPage .postPageCover {
   display: flex;
+  max-width: 1200px;
+  padding: 0px 20px;
+  margin: 0 auto;
 }
 .blogPostPage .postPageCover img {
   height: 100%;
@@ -12,19 +53,13 @@
 }
 .blogPostPage section.main {
   padding: 0;
-  background-color: var(--second-bg);
   padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   position: relative;
   align-items: baseline;
-}
-.blogPostPage section.main h1 {
-  color: var(--txt-color);
-  margin: 0 auto;
-  margin-bottom: 30px;
-  text-align: center;
-  font-size: 34px;
 }
 .blogPostPage section.main .postPageContent {
   max-width: 1200px;
@@ -56,6 +91,8 @@
   height: 100px;
   position: absolute;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .blogPostPage section.main .backToBlog svg {
   font-size: 24px;
@@ -103,4 +140,10 @@
   width: 35%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (max-width: 947px) {
+  .blogPostPage {
+    padding-top: 70px;
+  }
 }/*# sourceMappingURL=blogPostPage.css.map */

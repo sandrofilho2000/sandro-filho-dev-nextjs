@@ -161,14 +161,56 @@
 .navbar svg {
   cursor: pointer;
   font-size: 35px;
-  position: absolute;
   color: var(--main-color);
+  position: absolute;
   z-index: 10;
 }
-.navbar svg.faSearch {
+.navbar .faSearch {
+  position: relative;
+  z-index: 10;
   left: 10px;
+  display: flex;
+  align-items: center;
 }
-.navbar svg.faPalette {
+.navbar .faSearch svg {
+  position: relative;
+}
+.navbar .faSearch input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  margin-left: -100%;
+  color: white;
+  font-size: 17px;
+  transition: 0.4s;
+  opacity: 0;
+}
+.navbar .faSearch input::-moz-placeholder {
+  color: white;
+  font-style: italic;
+  font-size: 15px;
+}
+.navbar .faSearch input:-ms-input-placeholder {
+  color: white;
+  font-style: italic;
+  font-size: 15px;
+}
+.navbar .faSearch input::placeholder {
+  color: white;
+  font-style: italic;
+  font-size: 15px;
+}
+.navbar .faSearch input.active {
+  margin-left: 10px;
+  opacity: 1;
+}
+.navbar .faSearch input:focus {
+  outline: none;
+}
+.navbar .faSearch input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+.navbar .faPalette {
   right: 10px;
 }
 .navbar.sticky {
@@ -194,6 +236,42 @@
   transform: translateX(-50%);
 }
 
+@media (max-width: 947px) {
+  .navbar .faSearch input {
+    width: 100vw;
+    position: fixed;
+    z-index: 10;
+    margin-left: 0px !important;
+    height: 40px;
+    background-color: var(--main-bg);
+    box-shadow: var(--box-shadow);
+    border-bottom-color: var(--txt-color);
+    left: 0;
+    top: -70px;
+    padding: 0 10px;
+    color: var(--txt-color);
+  }
+  .navbar .faSearch input.active {
+    top: 70px;
+  }
+  .navbar .faSearch input::-moz-placeholder {
+    color: var(--txt-color);
+  }
+  .navbar .faSearch input:-ms-input-placeholder {
+    color: var(--txt-color);
+  }
+  .navbar .faSearch input::placeholder {
+    color: var(--txt-color);
+  }
+}
+@media (max-width: 500px) {
+  .navbar .faSearch input {
+    top: -50px;
+  }
+  .navbar .faSearch input.active {
+    top: 50px;
+  }
+}
 /*  import google fonts */
 :root {
   --main-bg: #ffffff;
@@ -1783,21 +1861,19 @@ section.heroSlider .owl-theme .owl-dots {
   .blogPosts .postsWrapper {
     display: flex;
     flex-direction: column;
-    /*             .mostReads{
-                    width: 100%; 
-                    > div{
-                        display: flex;
-                        justify-content: space-between;
-
-
-                        .Tilt{
-                            width: 32%;
-                            a.post{
-                                margin-bottom: 0;
-                            }
-                        }
-                    }
-                } */
+  }
+  .blogPosts .postsWrapper .mostReads {
+    width: 100%;
+  }
+  .blogPosts .postsWrapper .mostReads > div {
+    display: flex;
+    justify-content: space-between;
+  }
+  .blogPosts .postsWrapper .mostReads > div .Tilt {
+    width: 32%;
+  }
+  .blogPosts .postsWrapper .mostReads > div .Tilt a.post {
+    margin-bottom: 0;
   }
 }
 .mostReads {
@@ -1824,8 +1900,49 @@ section.heroSlider .owl-theme .owl-dots {
   -webkit-line-clamp: 5;
 }
 
+.blogPostPage {
+  background-color: var(--second-bg);
+  padding-top: 50px;
+}
+.blogPostPage h1.postTitle {
+  color: var(--txt-color);
+  margin: 50px auto;
+  text-align: center;
+  display: block;
+  font-size: 34px;
+  width: calc(100% - 40px);
+}
+.blogPostPage .postAuthorDate {
+  display: flex;
+  padding-left: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 30px;
+}
+.blogPostPage .postAuthorDate > div {
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.blogPostPage .postAuthorDate > div:last-of-type {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+}
+.blogPostPage .postAuthorDate span, .blogPostPage .postAuthorDate svg {
+  color: var(--txt-color);
+  display: inline-block;
+  align-items: center;
+}
+.blogPostPage .postAuthorDate span.icon {
+  height: 20px;
+  margin-right: 5px;
+}
 .blogPostPage .postPageCover {
   display: flex;
+  max-width: 1200px;
+  padding: 0px 20px;
+  margin: 0 auto;
 }
 .blogPostPage .postPageCover img {
   height: 100%;
@@ -1838,19 +1955,13 @@ section.heroSlider .owl-theme .owl-dots {
 }
 .blogPostPage section.main {
   padding: 0;
-  background-color: var(--second-bg);
   padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   position: relative;
   align-items: baseline;
-}
-.blogPostPage section.main h1 {
-  color: var(--txt-color);
-  margin: 0 auto;
-  margin-bottom: 30px;
-  text-align: center;
-  font-size: 34px;
 }
 .blogPostPage section.main .postPageContent {
   max-width: 1200px;
@@ -1882,6 +1993,8 @@ section.heroSlider .owl-theme .owl-dots {
   height: 100px;
   position: absolute;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .blogPostPage section.main .backToBlog svg {
   font-size: 24px;
@@ -1931,6 +2044,11 @@ section.heroSlider .owl-theme .owl-dots {
      object-fit: cover;
 }
 
+@media (max-width: 947px) {
+  .blogPostPage {
+    padding-top: 70px;
+  }
+}
 .Tilt:last-of-type {
   margin-bottom: 5px;
 }
@@ -2180,6 +2298,12 @@ section.heroSlider .owl-theme .owl-dots {
   }
 }
 @media (max-width: 740px) {
+  .Tilt {
+    pointer-events: none;
+  }
+  .Tilt a.post {
+    pointer-events: initial;
+  }
   .services .serv-content {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -2199,6 +2323,9 @@ section.heroSlider .owl-theme .owl-dots {
     max-height: unset;
     -o-object-fit: cover;
        object-fit: cover;
+  }
+  .blogPostPage h1.postTitle {
+    font-size: 27px;
   }
   .blogPostPage section.main .postPageContent {
     padding: 20px 20px;
@@ -2302,5 +2429,46 @@ section.heroSlider .owl-theme .owl-dots {
     width: 35px;
     font-size: 23px;
     line-height: 38px;
+  }
+}
+@media (max-width: 400px) {
+  .blogPostPage h1.postTitle {
+    font-size: 22px;
+  }
+}
+.searchPosts {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  position: fixed;
+  bottom: 0;
+  overflow: auto;
+  padding: 0;
+  pointer-events: none;
+}
+.searchPosts main {
+  display: flex;
+  pointer-events: initial;
+  flex-direction: column;
+  padding: 30px;
+}
+.searchPosts main .Tilt {
+  pointer-events: initial;
+}
+.searchPosts main .Tilt a.post {
+  margin-bottom: 0;
+}
+.searchPosts h1 {
+  text-align: center;
+  color: var(--txt-color);
+}
+
+@media (max-width: 947px) {
+  .searchPosts {
+    height: calc(100vh - 110px);
+  }
+}
+@media (max-width: 500px) {
+  .searchPosts {
+    height: calc(100vh - 90px);
   }
 }/*# sourceMappingURL=globals.css.map */

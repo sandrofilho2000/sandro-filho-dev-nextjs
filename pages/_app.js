@@ -13,9 +13,11 @@ function MyApp({ Component, pageProps }) {
 
   const [themeContext, setThemeContext] = useState("")
   const [colorContext, setColorContext] = useState("")
+  const [postSearchActiveContext, setPostSearchActiveContext] = useState(false)
+  const [postSearchInputContext, setPostSearchInputContext] = useState(false)
 
   return (
-    <AppContext.Provider value={{ themeContext, setThemeContext, colorContext, setColorContext }}>
+    <AppContext.Provider value={{ themeContext, setThemeContext, colorContext, setColorContext, postSearchActiveContext, setPostSearchActiveContext, postSearchInputContext, setPostSearchInputContext }}>
       
       <Component {...pageProps} />
 

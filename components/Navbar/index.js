@@ -1,13 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FaPalette, FaSearch } from "react-icons/fa";
+import AppContext from '../AppContext';
 
 const Navbar = ({sticky=false}) => {
     const [stickNav, setStickyNav] = useState("")
-    
     const [search, setSearch] = useState(false)
-    const [searchActive, setSearchActive] = useState(false)
+    const [searchActive, setSearchActive] = useState(true)
+
+    const context = useContext(AppContext)
 
     let handleThemeMenuActive = () =>{
         document.querySelector(".theme-color-menu").classList.toggle("active")
@@ -33,10 +35,26 @@ const Navbar = ({sticky=false}) => {
         }
     },[])
 
+    let handleSearchActive = () =>{
+        setSearchActive(!searchActive)
+    }
+
+    let handlePostSearchOverlay = (e) =>{
+        let value = e.currentTarget.value
+        if(value){
+            context.setPostSearchActiveContext(true)
+        }else{
+            context.setPostSearchActiveContext(false)
+        }
+        context.setPostSearchInputContext(value)
+    }
     return (
         <nav className={`navbar ${stickNav} ${sticky}`}>
             {search && 
-                <FaSearch className='faSearch'/>
+                <div className='faSearch'>
+                    <FaSearch onClick={()=>{handleSearchActive()}} />
+                    <input onChange={(e)=>{handlePostSearchOverlay(e)}} className={`${searchActive ? 'active' : ''}`} type="search" placeholder='Pesquisar post...'/>
+                </div>
             }
             <div className="max-width">
                 <h1>

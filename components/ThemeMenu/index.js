@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { FaMoon, FaSun } from 'react-icons/fa'
-import AppContext from '../../AppContext'
+import AppContext from '../AppContext'
 
 const ThemeMenu = () => {
     const context = useContext(AppContext)
@@ -18,6 +18,7 @@ const ThemeMenu = () => {
 
         document.querySelector("body").setAttribute("theme-mode", `theme-mode-${currTheme}`)
         document.querySelector("body").setAttribute("theme-color", `theme-color-${currColor}`)
+        
     }, [context])
 
     let handleColorActive = () => {

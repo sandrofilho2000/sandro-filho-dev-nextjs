@@ -8,14 +8,54 @@
 @import 'components/hero'; 
 @import 'components/about';  
 @import 'components/services';
-@import 'components/skills';
-@import 'components/portfolio'; 
+@import 'components/skills'; 
+@import 'components/portfolio';  
 @import 'components/blog';
 @import 'components/contact';
 @import 'components/blogPage/heroSlider';
 @import 'components/blogPage/blogPosts';
-@import 'components/blogPage/mostReads';
-@import 'components/blogPage/blogPostPage';
-@import 'components/post';
-@import 'components/mediaqueries';
+@import 'components/blogPage/mostReads';  
+@import 'components/blogPage/blogPostPage';  
+@import 'components/post';   
+@import 'components/mediaqueries'; 
 
+.searchPosts{      
+    width: 100vw;
+    height: calc(100vh - 70px);
+    position: fixed;
+    bottom: 0;   
+    overflow: auto;  
+    padding: 0; 
+    pointer-events: none;
+
+    main{
+        display: flex;
+        pointer-events: initial;
+        flex-direction: column;
+        padding: 30px;
+
+        .Tilt{
+            pointer-events: initial;
+            a.post{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    h1{
+        text-align: center;
+        color: var(--txt-color);
+    }
+}  
+
+@media (max-width: 947px){
+    .searchPosts{
+        height: calc(100vh - 110px);
+    }
+}
+
+@media (max-width: 500px){
+    .searchPosts{
+        height: calc(100vh - 90px);
+    }
+}

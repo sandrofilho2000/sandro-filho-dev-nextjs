@@ -7,7 +7,7 @@ import Portfolio from '../components/HomePage/Portfolio'
 import Blog from '../components/HomePage/Blog'
 import Contact from '../components/HomePage/Contact'
 import Menu from '../components/HomePage/Menu'
-import ThemeMenu from '../components/HomePage/ThemeMenu'
+import ThemeMenu from '../components/ThemeMenu'
 import Warning from '../components/HomePage/Warning'
 import Head_JSX from '../components/HomePage/Head'
 import { GraphQLClient, gql } from "graphql-request";

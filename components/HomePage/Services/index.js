@@ -14,7 +14,6 @@ const Services = () => {
         tiltMaxAngleX: 3,
         tiltMaxAngleY: 3,
         glarePosition:"all",
-        gyroscope: true
     }
     return (
         <section className="services" id="services">

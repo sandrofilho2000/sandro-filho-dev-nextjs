@@ -1,6 +1,51 @@
 .blogPostPage{
+    background-color: var(--second-bg);
+    padding-top: 50px;
+
+    h1.postTitle{ 
+        color: var(--txt-color);
+        margin: 50px auto;
+        text-align: center;
+        display: block;
+        font-size: 34px;
+        width: calc(100% - 40px);
+    }
+
+    .postAuthorDate{
+        display: flex; 
+        padding-left: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 30px;
+        >div{
+            height: 30px;
+            display: flex;
+            align-items: center;
+            &:last-of-type{
+                margin-left: 30px;
+                display: flex;
+                align-items: center;
+            }
+        }
+        
+        span, svg{
+            color: var(--txt-color);
+            display: inline-block;
+            align-items: center;
+        }
+
+        span.icon{
+            height: 20px;
+            margin-right: 5px;
+        }
+    }
+
     .postPageCover{
         display: flex;
+        max-width: 1200px;
+        padding: 0px 20px;
+        margin: 0 auto;
+
         img{
             height: 100%;
             max-height: 600px;
@@ -12,20 +57,15 @@
     
     section.main{  
         padding: 0;
-        background-color: var(--second-bg);
         padding: 80px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
         display: flex; 
-        justify-content: space-around; 
+        justify-content: space-between; 
         position: relative;
         align-items: baseline;
 
-        h1{ 
-            color: var(--txt-color);
-            margin: 0 auto;
-            margin-bottom: 30px;
-            text-align: center;
-            font-size: 34px;
-        }
+
 
         .postPageContent{
             max-width: 1200px;
@@ -55,7 +95,8 @@
             height: 100px;
             position: absolute;
             bottom: 0;
-
+            left: 50%;
+            transform: translateX(-50%);
             svg{
                 font-size: 24px;
                 margin-right: 10px;
@@ -124,3 +165,10 @@
         }
     } 
 } 
+
+
+@media (max-width: 947px){
+    .blogPostPage{
+        padding-top: 70px;
+    }
+}
