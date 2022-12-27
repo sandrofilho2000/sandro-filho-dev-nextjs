@@ -2461,6 +2461,7 @@ section.heroSlider .owl-theme .owl-dots {
 }
 .searchPosts main .Tilt a.post {
   margin-bottom: 0;
+  display: flex;
 }
 .searchPosts h1 {
   text-align: center;
