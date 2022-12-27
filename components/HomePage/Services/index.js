@@ -45,6 +45,7 @@ const Services = () => {
                             </div>
                         </div>
                     </Tilt>
+
                     <Tilt className="Tilt"
                             {...tiltOptions}
                         >
@@ -58,6 +59,7 @@ const Services = () => {
                             </div>
                         </div>
                     </Tilt>
+                    
                     <Tilt className="Tilt"
                             {...tiltOptions}
                         >
@@ -70,10 +72,6 @@ const Services = () => {
                         </div>
 
                     </Tilt>
-
-
-
-
 
                 </div>
             </div>

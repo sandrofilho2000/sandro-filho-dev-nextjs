@@ -1336,7 +1336,8 @@ aside.theme-color-menu .colors-wrapper .colors-list li.crimson div {
   gap: 10px;
 }
 .services .serv-content .card {
-  min-height: 250px;
+  min-height: 255px;
+  height: 100%;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   text-align: center;
@@ -2049,26 +2050,26 @@ section.heroSlider .owl-theme .owl-dots {
     padding-top: 70px;
   }
 }
-.Tilt:last-of-type {
+.Tilt:has(a.post):last-of-type {
   margin-bottom: 5px;
 }
-.Tilt:last-of-type a.post {
+.Tilt:has(a.post):last-of-type a.post {
   margin-bottom: 0px;
 }
-.Tilt a.post {
+.Tilt:has(a.post) a.post {
   margin-bottom: 30px;
   display: block;
   border-radius: 6px;
   box-shadow: var(--box-shadow);
   overflow: hidden;
 }
-.Tilt a.post .authorDate {
+.Tilt:has(a.post) a.post .authorDate {
   display: none;
 }
-.Tilt a.post .text_wrapper {
+.Tilt:has(a.post) a.post .text_wrapper {
   padding: 10px;
 }
-.Tilt a.post .text_wrapper .text.blog_headline {
+.Tilt:has(a.post) a.post .text_wrapper .text.blog_headline {
   font-weight: bold;
   font-size: 16px;
   display: -webkit-box !important;
@@ -2080,13 +2081,13 @@ section.heroSlider .owl-theme .owl-dots {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-.Tilt a.post .text_wrapper .authorDateContent .text_content {
+.Tilt:has(a.post) a.post .text_wrapper .authorDateContent .text_content {
   margin-top: 10px;
 }
-.Tilt a.post .text_wrapper .authorDateContent .text_content * {
+.Tilt:has(a.post) a.post .text_wrapper .authorDateContent .text_content * {
   display: none;
 }
-.Tilt a.post .text_wrapper .authorDateContent .text_content p:nth-of-type(2) {
+.Tilt:has(a.post) a.post .text_wrapper .authorDateContent .text_content p:nth-of-type(2) {
   font-size: 12px;
   display: -webkit-box !important;
   overflow: hidden;

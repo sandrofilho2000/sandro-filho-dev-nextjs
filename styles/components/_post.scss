@@ -1,4 +1,4 @@
-.Tilt{
+.Tilt:has(a.post){
     &:last-of-type{
         margin-bottom: 5px;
         a.post{
