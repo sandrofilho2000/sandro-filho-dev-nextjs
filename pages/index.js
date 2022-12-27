@@ -63,9 +63,9 @@ export default function Home({posts}) {
       <Navbar />
       <Hero />
       <About />
+      <Portfolio />
       <Services />
       <Skills />
-      <Portfolio />
       <Blog posts={posts} />
       <Contact />
     </div>

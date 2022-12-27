@@ -14,18 +14,18 @@ const Menu = () => {
         }
     }
 
-    let handleMenuOpened = (e) =>{
+    let handleMenuOpened = (e) => {
         switch (e.detail) {
             case 2: {
-                if(menuOpened === 'active'){
+                if (menuOpened === 'active') {
                     setMenuOpenend("")
-                }else{
+                } else {
                     setMenuOpenend("active")
                 }
             }
         }
         open_warning()
-        
+
     }
 
     useEffect(() => {
@@ -41,7 +41,7 @@ const Menu = () => {
         }
 
         const onMouseMove = (e) => {
-            if(!isClicked.current) return
+            if (!isClicked.current) return
 
             navigation.style.top = `${e.clientY - 15}px`
             navigation.style.left = `${e.clientX - 15}px`
@@ -50,7 +50,7 @@ const Menu = () => {
         toggle.addEventListener("mousedown", onMouseDown)
         toggle.addEventListener("mouseup", onMouseUp)
         window.addEventListener("mousemove", onMouseMove)
-        
+
         const cleanUp = () => {
             navigation.removeEventListener("mousedown", onMouseDown)
             navigation.removeEventListener("mouseup", onMouseUp)
@@ -62,36 +62,36 @@ const Menu = () => {
 
     return (
         <div ref={navigationRef} className={`navigation ${menuOpened}`}>
-            <div ref={toggleRef} onClick={(e)=>{handleMenuOpened(e)}}  className="toggle">
+            <div ref={toggleRef} onClick={(e) => { handleMenuOpened(e) }} className="toggle">
                 <ul className="menu">
                     <li><a href="#home">
-                            <span className="icon"><FaHome/></span>
-                            <span className="title">Home</span>
-                        </a></li>
+                        <span className="icon"><FaHome /></span>
+                        <span className="title">Home</span>
+                    </a></li>
                     <li><a href="#about">
-                            <span className="icon"><FaAddressCard/></span>
-                            <span className="title">Sobre</span>
-                        </a></li>
-                    <li><a href="#services">
-                            <span className="icon"><FaTools/></span>
-                            <span className="title">Serviços</span>
-                        </a></li>
-                    <li><a href="#skills">
-                            <span className="icon"><FaPencilAlt/></span>
-                            <span className="title">Habilidades</span>
-                        </a></li>
+                        <span className="icon"><FaAddressCard /></span>
+                        <span className="title">Sobre</span>
+                    </a></li>
                     <li><a href="#portfolio">
-                            <span className="icon"><FaLaptop/></span>
-                            <span className="title">Portifólio</span>
-                        </a></li>
+                        <span className="icon"><FaLaptop /></span>
+                        <span className="title">Portifólio</span>
+                    </a></li>
+                    <li><a href="#services">
+                        <span className="icon"><FaTools /></span>
+                        <span className="title">Serviços</span>
+                    </a></li>
+                    <li><a href="#skills">
+                        <span className="icon"><FaPencilAlt /></span>
+                        <span className="title">Habilidades</span>
+                    </a></li>
                     <li><a href="#blog">
-                            <span className="icon"><FaNewspaper/></span>
-                            <span className="title">Blog</span>
-                        </a></li>
+                        <span className="icon"><FaNewspaper /></span>
+                        <span className="title">Blog</span>
+                    </a></li>
                     <li><a href="#contact">
-                            <span className="icon"><FaPhone/></span>
-                            <span className="title">Contato</span>
-                        </a></li>
+                        <span className="icon"><FaPhone /></span>
+                        <span className="title">Contato</span>
+                    </a></li>
                 </ul>
             </div>
         </div>
