@@ -748,6 +748,10 @@ section .card .box a {
       -ms-user-select: none;
           user-select: none;
 }
+.radio_container .img_play_container .controls > div {
+  display: flex;
+  align-items: center;
+}
 .radio_container .img_play_container .controls svg {
   font-size: 14px;
   color: var(--main-color);

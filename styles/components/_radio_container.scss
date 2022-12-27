@@ -205,6 +205,10 @@
         }
 
         .controls {
+            > div{
+                display: flex;
+                align-items: center;
+            }
             svg {
                 font-size: 14px;
                 color: var(--main-color);
