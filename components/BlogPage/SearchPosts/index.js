@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import AppContext from '../../AppContext'
 import { Post } from '../BlogPosts/Post'
+import PostList from '../BlogPosts/PostList'
 
 const SearchPosts = ({ posts, searchInput }) => {
     const context = useContext(AppContext)
@@ -30,11 +31,7 @@ const SearchPosts = ({ posts, searchInput }) => {
                         </h1>
                     )
                     :
-                    filteredPosts.map((item, index) => {
-                        return (
-                            <Post key={item.id} item={item} />
-                        )
-                    })
+                    <PostList posts={filteredPosts} postHorizontal={'horizontal'}/>
                 }
 
             </main>

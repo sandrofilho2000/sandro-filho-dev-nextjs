@@ -1,19 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useContext, useEffect } from 'react'
-import { FaArrowCircleLeft, FaUser, FaCalendar } from 'react-icons/fa';
+import React, { useContext } from 'react'
+import { FaUser, FaCalendar } from 'react-icons/fa';
 import { GraphQLClient, gql } from "graphql-request";
 import Navbar from '../components/Navbar';
 import moment from "moment";
 import 'moment/locale/pt-br'
 import ThemeMenu from '../components/ThemeMenu';
 import Contact from '../components/HomePage/Contact';
-import Link from 'next/link';
-import MostReads from '../components/BlogPage/MostReads';
 import Head_JSX from '../components/HomePage/Head';
 import PostPageCover from '../components/PostPage/PostPageCover';
 import PostPageContent from '../components/PostPage/PostPageContent';
 import AppContext from '../components/AppContext';
 import SearchPosts from '../components/BlogPage/SearchPosts';
+import PostList from '../components/BlogPage/BlogPosts/PostList';
 
 const graphcms = new GraphQLClient("https://api-sa-east-1.hygraph.com/v2/cl9yvfs8y2bdh01uk61941hvs/master")
 
@@ -136,13 +135,8 @@ const BlogPost = ({ post, posts }) => {
 
       <section className='main'>
         <PostPageContent html={post.content.html} title={post.title} />
-        <MostReads posts={mostReadsPosts} />
-        <Link className='backToBlog' href='../blog'>
-          <FaArrowCircleLeft />
-          <span>
-            Voltar ao Blog
-          </span>
-        </Link>
+        <PostList posts={posts} postHorizontal={'horizontalResponsive'} title="Veja tambem" maxPosts={3} />
+
       </section>
 
       <Contact />

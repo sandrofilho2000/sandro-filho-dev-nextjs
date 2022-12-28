@@ -12,44 +12,7 @@
         >div{
             margin: 0 auto;
         }
-
-        .postsList{
-            display: flex;
-            height: auto;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .mostReads{
-            width: 100%;
-            top: -25px;
-        }
     }
 
 
-}
-
-@media screen and (max-width: 928px){
-    .blogPosts{
-        .postsWrapper{
-            display: flex;
-            flex-direction: column;
-
-            .mostReads{
-                width: 100%; 
-                > div{
-                    display: flex;
-                    justify-content: space-between;
-                    
-                    
-                    .Tilt{
-                        width: 32%;
-                        a.post{
-                            margin-bottom: 0;
-                        }
-                    }
-                }
-            }
-        }
-    }
 }

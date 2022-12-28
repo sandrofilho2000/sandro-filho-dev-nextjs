@@ -1,0 +1,8 @@
+.postList{
+    position: relative;
+    p.postListTitle{
+        transform: translateY(-100%);
+        color: var(--txt-color);
+        position: absolute;
+    }
+}

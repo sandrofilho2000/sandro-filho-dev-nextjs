@@ -27,7 +27,8 @@
   display: flex;
   align-items: center;
 }
-.blogPostPage .postAuthorDate span, .blogPostPage .postAuthorDate svg {
+.blogPostPage .postAuthorDate span,
+.blogPostPage .postAuthorDate svg {
   color: var(--txt-color);
   display: inline-block;
   align-items: center;
@@ -59,11 +60,11 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  align-items: baseline;
+  align-items: flex-start;
 }
 .blogPostPage section.main .postPageContent {
   max-width: 1200px;
-  width: 70%;
+  width: 65%;
   padding: 20px 40px;
   background-color: var(--main-bg);
   box-shadow: var(--box-shadow);
@@ -72,6 +73,7 @@
      -moz-user-select: initial !important;
       -ms-user-select: initial !important;
           user-select: initial !important;
+  position: relative;
 }
 .blogPostPage section.main .postPageContent * {
   color: var(--txt-color);
@@ -88,62 +90,13 @@
   width: 100%;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  height: auto;
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(200%);
 }
 .blogPostPage section.main .backToBlog svg {
   font-size: 24px;
   margin-right: 10px;
-}
-
-.main_post .Tilt {
-  height: 100%;
-}
-.main_post .Tilt a.post {
-  margin-bottom: 0;
-  height: 100%;
-}
-.main_post .Tilt a.post .text_wrapper .text.blog_headline {
-  font-size: 25px;
-}
-.main_post .Tilt a.post .text_wrapper .authorDateContent .text_content p:nth-of-type(2) {
-  font-size: 14px;
-  -webkit-line-clamp: 4;
-}
-
-.item_list .Tilt {
-  margin-bottom: 30px;
-}
-.item_list .Tilt a.post {
-  display: flex;
-}
-.item_list .Tilt a.post .text_wrapper .text.blog_headline {
-  width: 80%;
-}
-.item_list .Tilt a.post .authorDate {
-  display: flex;
-  font-size: 12px;
-  margin-top: 6px;
-  margin-bottom: 4px;
-}
-.item_list .Tilt a.post .authorDate span:first-of-type {
-  margin-right: 3px;
-}
-.item_list .Tilt a.post .authorDate span:last-of-type {
-  margin-left: 6px;
-}
-.item_list .Tilt a.post > img {
-  max-width: 260px;
-  width: 35%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-@media (max-width: 947px) {
-  .blogPostPage {
-    padding-top: 70px;
-  }
 }/*# sourceMappingURL=blogPostPage.css.map */

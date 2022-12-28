@@ -6,12 +6,12 @@
 
 .blog {
     position: relative;
-    padding-bottom: 150px;
+    padding-bottom: 85px;
+    
     .blog-content {
         display: grid;
         grid-template-columns: 0.7fr 0.3fr;
         grid-template-rows: 1fr;
-        max-height: 600px;
         grid-gap: 30px;
         max-width: 1200px;
         justify-content: center;

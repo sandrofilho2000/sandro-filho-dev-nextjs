@@ -33,33 +33,89 @@
         padding-bottom: 125px;
     }
 
-    .mostReads{
-        top: 30px;
-        width: 100%;
-    }
-
-    .mostReads .mostReadsWrapper{
-        display: flex;
-        gap: 10px;
-
-        .Tilt a.post{
-
-            > img{
-                max-height: 155px;
-            }
-        }
-    } 
-
     .blogPostPage section.main .postPageContent{
         width: 100%;
     }
 
-    .mostReads .Tilt a.post .text_wrapper .authorDateContent .text_content p:nth-of-type(2){
-        -webkit-line-clamp: 3;
+
+    .blog {
+        .blog-content {
+            max-height: unset;
+            display: flex;
+            flex-direction: column;
+
+            .veja_tambem {
+                margin-top: 50px;
+                padding: 0px;
+                .owl-stage{
+                    display: flex;
+                }
+
+                .cards_container {
+                    &.cards_container_desktop{
+                        display: none !important;
+                    }
+                    &.cards_container_mobile{
+                        display: block !important;
+                    }
+
+                    .card,
+                    .owl-item {
+                        margin: 0px 20px;
+
+                        &:first-of-type {
+                            margin-left: 0;
+                        }
+
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+
+                        .text_content {
+                            .text {
+                                min-height: 42px;
+                            }
+                        }
+
+                        &.cloned:last-of-type{
+                            position: absolute;
+                        }
+                        
+                    }
+                }
+            }
+        }
+
     }
     
     .Tilt a.post{
         margin-bottom: 0;
+    }
+
+    .blogPostPage section.main .postPageContent{
+        margin-bottom: 100px;
+    }
+
+    .blogPosts{
+        .postsWrapper{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .Tilt { 
+        &.horizontalResponsive {
+            max-width: unset !important;
+            a.post {
+                display: flex !important;
+
+                >img {
+                    max-width: 260px;
+                    width: 35%;
+                    object-fit: cover;
+                }
+            }
+        }
     }
 }
 
@@ -158,59 +214,14 @@
         margin-bottom: 35px;
     }
 
-    .blog {
-        .blog-content {
-            max-height: unset;
-            display: flex;
-            flex-direction: column;
 
-            .veja_tambem {
-                margin-top: 50px;
-                padding: 0px;
-                .owl-stage{
-                    display: flex;
-                }
-
-                .cards_container {
-                    &.cards_container_desktop{
-                        display: none !important;
-                    }
-                    &.cards_container_mobile{
-                        display: block !important;
-                    }
-
-                    .card,
-                    .owl-item {
-                        margin: 0px 20px;
-
-                        &:first-of-type {
-                            margin-left: 0;
-                        }
-
-                        &:last-of-type {
-                            margin-right: 0;
-                        }
-
-                        .text_content {
-                            .text {
-                                min-height: 42px;
-                            }
-                        }
-
-                        &.cloned:last-of-type{
-                            position: absolute;
-                        }
-                        
-                    }
-                }
-            }
-        }
-
+    .blogPostPage {
+        padding-top: 70px;
     }
-    
-    .blogPosts .postsWrapper .mostReads {
-        margin-top: 40px;
-    }
+
+
+
+
 }
 
 @media (max-width: 800px) {
@@ -257,24 +268,6 @@
     .services .serv-content{
         grid-template-columns: 1fr ;
         grid-template-rows:  1fr;
-    }
-    .mostReads .mostReadsWrapper{
-        display: flex;
-        flex-direction: column;
-
-        .Tilt{
-            max-width: unset;
-            a.post{
-                display: flex;
-    
-                > img{
-                    width: 35%;
-                    max-height: unset;
-                    object-fit: cover;
-                }
-            }
-        } 
-
     }
 
     .blogPostPage h1.postTitle{
@@ -334,24 +327,6 @@
 }
 
 @media (max-width: 542px){
-    .blogPosts {
-        .postsWrapper{
-            .postsList, .mostReads{
-                > div {
-                    .Tilt {
-                        a.post{
-                            flex-direction: column;
-                        
-                            > img{
-                                width: 100%;
-                                max-width: none;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
 
     .blogPostPage section.main h1{
         font-size: 25px;

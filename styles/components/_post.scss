@@ -1,25 +1,58 @@
-.Tilt:has(a.post){
-    &:last-of-type{
-        margin-bottom: 5px;
-        a.post{
+.Tilt:has(a.post) {
+    max-width: 300px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+
+    &:last-of-type {
+        a.post {
             margin-bottom: 0px;
         }
     }
-    a.post{
-        margin-bottom: 30px;
-        border-radius: 6px;
-        box-shadow: var(--box-shadow);
-        overflow: hidden;
 
-        .authorDate{
-            display: none;
+    &.horizontal {
+        max-width: unset;
+
+        a.post {
+            display: flex;
+
+            >img {
+                max-width: 260px;
+                width: 35%;
+                object-fit: cover;
+            }
+
+            .text_wrapper {
+                .authorDate {
+                    display: flex;
+                }
+            }
+
         }
-    
-        .text_wrapper{
+    }
+
+    a.post {
+        .text_wrapper {
             padding: 10px;
-    
-            .text.blog_headline{
-                font-weight: bold; 
+
+            .authorDate {
+                display: none;
+                font-size: 12px;
+                margin-top: 6px;
+                margin-bottom: 4px;
+
+                span:first-of-type {
+                    margin-right: 3px
+                }
+
+                span:last-of-type {
+                    margin-left: 6px
+                }
+            }
+
+            .text.blog_headline {
+                font-weight: bold;
                 font-size: 16px;
                 display: -webkit-box !important;
                 overflow: hidden;
@@ -29,16 +62,17 @@
                 max-width: 300px;
                 -webkit-line-clamp: 1;
                 -webkit-box-orient: vertical;
-            } 
-            
-            .authorDateContent{ 
-                .text_content{
-                    margin-top: 10px; 
-                    *{ 
+            }
+
+            .authorDateContent {
+                .text_content {
+                    margin-top: 10px;
+
+                    * {
                         display: none;
                     }
-        
-                    p:nth-of-type(2){
+
+                    p:nth-of-type(2) {
                         font-size: 12px;
                         display: -webkit-box !important;
                         overflow: hidden;
@@ -49,17 +83,16 @@
                     }
                 }
             }
-    
+
         }
-        
+
     }
 }
 
-
-.item_list{
-    margin: 10px 0;
-
-    &:first-of-type{
-        margin-top: 0;
+.blog-content{
+    .main_post{
+        .Tilt{
+            max-width: unset;
+        }
     }
 }

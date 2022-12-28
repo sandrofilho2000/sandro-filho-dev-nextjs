@@ -6,6 +6,7 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import Link from 'next/link';
 import { Post } from '../../BlogPage/BlogPosts/Post';
+import PostList from '../../BlogPage/BlogPosts/PostList';
 
 
 var $ = require("jquery");
@@ -21,7 +22,7 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
 
 const Blog = ({ posts }) => {
     var main_post = posts[0]
-
+    var vejaTambem = posts.slice(1, posts.length)
     const options = {
         margin: 10,
         responsiveClass: true,
@@ -57,40 +58,8 @@ const Blog = ({ posts }) => {
                     <div className="main_post">
                         <Post item={main_post} />
                     </div>
-                    <div className="veja_tambem">
-                        <div className="h4_role">
-                            Veja também
-                        </div>
-                        <div className="cards_container cards_container_desktop">
-                            {
-                                posts.map((item, index) => {
-                                    return (
-                                        <Post key={item.slug} item={item} />
-                                    )
-                                })
-                            }
-                        </div>
 
-                                            <div className="cards_container cards_container_mobile">
-                        <OwlCarousel
-                            className="owl-theme"
-                            loop
-                            margin={4}
-                            nav={true}
-                            dots={false}
-                            animateIn={true}
-                            {...options}
-                        >
-                            {posts.map((item, index)=>{
-                                if(!item.main_post){
-                                    return (
-                                        <Post key={item.slug} item={item}></Post>
-                                    )
-                                }
-                            })}
-                        </OwlCarousel>
-                    </div>
-                    </div>
+                    <PostList posts={vejaTambem} postHorizontal={'horizontalResponsive'} title="Veja tambem" maxPosts={3} />
                 </div>
                 <Link className='goToBlog' href="/blog">Acessar blog</Link>
             </div>

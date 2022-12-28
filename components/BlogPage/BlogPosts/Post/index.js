@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Tilt from 'react-parallax-tilt'
 
 
-export const Post = ({ item }) => {
+export const Post = ({ item, postHorizontal }) => {
 
     const tiltOptions = {
         perspective: 500,
@@ -21,7 +21,7 @@ export const Post = ({ item }) => {
 
     moment.locale('pt-br')
     return (
-        <Tilt className="Tilt"
+        <Tilt className={`Tilt ${postHorizontal}`}
             {...tiltOptions}
         >
             <Link href={'/' + item.slug} className="post">
