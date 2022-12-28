@@ -4,6 +4,7 @@ import { Post } from '../BlogPosts/Post'
 import PostList from '../BlogPosts/PostList'
 
 const SearchPosts = ({ posts, searchInput }) => {
+    
     const context = useContext(AppContext)
     const filteredPosts = !!searchInput ? posts.filter(post => {
         let titleMatch = post.title.toLowerCase().includes(

@@ -7,55 +7,162 @@
 @import 'components/keyframes';
 @import 'components/hero'; 
 @import 'components/about';   
+@import 'components/portfolio';   
 @import 'components/services';
 @import 'components/skills';  
-@import 'components/portfolio';   
+@import 'components/certificates';  
 @import 'components/blog';
 @import 'components/contact'; 
 @import 'components/blogPage/heroSlider';
 @import 'components/blogPage/blogPosts';
 @import 'components/blogPage/blogPostPage';  
 @import 'components/blogPage/postList';  
+@import 'components/blogPage/searchPosts';  
 @import 'components/post';   
 @import 'components/mediaqueries';  
 
-.searchPosts{      
-    width: 100vw;
-    height: calc(100vh - 70px);
-    position: fixed;
-    bottom: 0;   
-    overflow: auto;    
-    padding: 0; 
-
-    main{
+.certificates{
+    overflow-x: hidden;
+    .certificates-content{
+        max-width: 1200px;
+        width: 90%;
+        margin: 0 auto;
         display: flex;
-        pointer-events: initial;
-        flex-direction: column;
-        padding: 30px; 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
 
-        .Tilt{ 
-            pointer-events: initial;
-            a.post{
-                margin-bottom: 0;
-                display: flex;
+        .certificate{
+            height: auto;
+            border-radius: 0px;
+            max-width: 300px;
+            height: auto;
+            .Tilt{
+                height: 100%;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .glare-wrapper{
+                    border-radius: 0px !important;
+                }
             }
         }
     }
+}
 
-    h1{
-        text-align: center;
-        color: var(--txt-color);
+.certificates .title::after {
+    content: "O que já conquistei";
+}
+
+.certificatesOverlay{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.616);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &.active{
+        display: flex;
     }
-}   
- 
-@media (max-width: 947px){
-    .searchPosts{
-        height: calc(100vh - 110px);
+
+    > .Tilt{
+        width: 90%;
+        max-width: 750px;
+        max-height: 535px;
+        pointer-events: initial !important;
+        *{
+            border-radius: 0 !important;
+        }
+        img{
+            height: 100%;
+            margin: 0 auto;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .overlayNav{
+        width: 90%;
+        max-width: 750px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+
+        svg{
+            color: var(--main-color);
+            font-size: 50px;
+            user-select: none;
+            cursor: pointer;
+            transition: 0.4s;
+
+            &:hover{
+                color: white;
+            }
+        }
     }
 }
 
-@media (max-width: 500px){
-    .searchPosts{
-        height: calc(100vh - 90px);
+
+@media (max-width: 928px){
+    .certificates .certificates-content .certificate{
+        max-width: 250px;
+    }
+}
+@media (max-width: 633px){
+    .certificates .certificates-content{
+        flex-wrap: nowrap;
+        width: calc(300px * 9);
+        justify-content: flex-start;
+        animation: slideCertificates 160s linear infinite forwards;
+    }
+
+    @keyframes slideCertificates {
+        0%{
+            margin-left: 0px;
+        }
+        50%{
+            margin-left: -3000px;
+        }
+        100%{
+            margin-left: 0px;
+        }
+    }
+
+    .certificates .certificates-content .certificate{
+        max-width: unset;
+        min-width: 300px;
+        pointer-events: initial;
+        cursor: pointer;
+    }
+}
+@media (max-width: 478px) {
+    .certificates .certificates-content{
+        flex-wrap: nowrap;
+        width: calc(200px * 9);
+    }
+    .certificates .certificates-content .certificate{
+        min-width: 200px;
+    }
+
+    @keyframes slideCertificates {
+        0%{
+            margin-left: 0px;
+        }
+        50%{
+            margin-left: -2000px;
+        }
+        100%{
+            margin-left: 0px;
+        }
     }
 }

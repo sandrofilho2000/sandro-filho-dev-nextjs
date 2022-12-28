@@ -10,9 +10,9 @@ const Services = () => {
         glareEnable: true,
         glareMaxOpacity: 1,
         scale: 1,
-        max: 3,
-        tiltMaxAngleX: 3,
-        tiltMaxAngleY: 3,
+        max: 2,
+        tiltMaxAngleX: 2,
+        tiltMaxAngleY: 2,
         glarePosition:"all",
     }
     return (

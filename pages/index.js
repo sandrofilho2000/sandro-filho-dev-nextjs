@@ -3,6 +3,7 @@ import Hero from '../components/HomePage/Hero'
 import About from '../components/HomePage/About'
 import Services from '../components/HomePage/Services'
 import Skills from '../components/HomePage/Skills'
+import Certificates from '../components/HomePage/Certificates'
 import Portfolio from '../components/HomePage/Portfolio'
 import Blog from '../components/HomePage/Blog'
 import Contact from '../components/HomePage/Contact'
@@ -11,6 +12,8 @@ import ThemeMenu from '../components/ThemeMenu'
 import Warning from '../components/HomePage/Warning'
 import Head_JSX from '../components/HomePage/Head'
 import { GraphQLClient, gql } from "graphql-request";
+import CertificatesOverlay from '../components/HomePage/CertificatesOverlay'
+
 
 const graphcms = new GraphQLClient("https://api-sa-east-1.hygraph.com/v2/cl9yvfs8y2bdh01uk61941hvs/master")
 
@@ -39,6 +42,7 @@ const QUERY = gql`
 
 export async function getStaticProps() {
     const { posts } = await graphcms.request(QUERY)
+
     return {
         props: {
             posts
@@ -66,6 +70,8 @@ export default function Home({posts}) {
       <Portfolio />
       <Services />
       <Skills />
+      <Certificates />
+      <CertificatesOverlay />
       <Blog posts={posts} />
       <Contact />
     </div>

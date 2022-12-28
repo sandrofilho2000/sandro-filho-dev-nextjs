@@ -15,9 +15,10 @@ function MyApp({ Component, pageProps }) {
   const [colorContext, setColorContext] = useState("")
   const [postSearchActiveContext, setPostSearchActiveContext] = useState(false)
   const [postSearchInputContext, setPostSearchInputContext] = useState(false)
+  const [overlayCertificatePic, setOverlayCertificatePic] = useState({active: false, img: ''})
 
   return (
-    <AppContext.Provider value={{ themeContext, setThemeContext, colorContext, setColorContext, postSearchActiveContext, setPostSearchActiveContext, postSearchInputContext, setPostSearchInputContext }}>
+    <AppContext.Provider value={{ themeContext, setThemeContext, colorContext, setColorContext, postSearchActiveContext, setPostSearchActiveContext, postSearchInputContext, setPostSearchInputContext, overlayCertificatePic, setOverlayCertificatePic }}>
       
       <Component {...pageProps} />
 

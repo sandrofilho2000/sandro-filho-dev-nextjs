@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { FaHome, FaAddressCard, FaTools, FaPencilAlt, FaLaptop, FaNewspaper, FaPhone } from "react-icons/fa";
+import { FaHome, FaAddressCard, FaTools, FaPencilAlt, FaLaptop, FaNewspaper, FaPhone, FaTrophy } from "react-icons/fa";
 
 const Menu = () => {
     const [menuOpened, setMenuOpenend] = useState("0")
@@ -83,6 +83,10 @@ const Menu = () => {
                     <li><a href="#skills">
                         <span className="icon"><FaPencilAlt /></span>
                         <span className="title">Habilidades</span>
+                    </a></li>
+                    <li><a href="#certificates">
+                        <span className="icon"><FaTrophy /></span>
+                        <span className="title">Certificados</span>
                     </a></li>
                     <li><a href="#blog">
                         <span className="icon"><FaNewspaper /></span>
