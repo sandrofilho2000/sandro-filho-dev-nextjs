@@ -27,7 +27,7 @@ const About = () => {
         return () => {
             typed.destroy();
         };
-    },[])
+    },[]) 
 
     
 
