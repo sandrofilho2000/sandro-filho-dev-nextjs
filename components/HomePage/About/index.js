@@ -28,6 +28,10 @@ const About = () => {
             typed.destroy();
         };
     },[])
+
+    
+
+
     return (
         <section className="about" id="about">
             <div className="max-width">
