@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 import profile from '../../../public/assets/images/me.webp'
+
 import Typed from "typed.js";
 
 const About = () => {
@@ -54,7 +55,7 @@ const About = () => {
                             tecnologias. Busco soluções eficazes e criativas para a resolução do desafio de criar um site
                             mais moderno e deslumbrante do que o último. Confira abaixo meu portfólio e dê uma olhada em
                             alguns dos meu trabalhos!</p>
-                        <a href="../../../public/assets/Curriculum.pdf" target="_blank" rel="noreferrer">Baixar currículo</a>
+                        <a href="./assets/Curriculum.pdf" target="_blank" rel="noreferrer">Baixar currículo</a>
                     </div>
                 </div>
             </div>
