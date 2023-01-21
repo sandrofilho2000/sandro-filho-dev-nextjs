@@ -13,6 +13,7 @@ import Warning from '../components/HomePage/Warning'
 import Head_JSX from '../components/HomePage/Head'
 import { GraphQLClient, gql } from "graphql-request";
 import CertificatesOverlay from '../components/HomePage/CertificatesOverlay'
+import { useEffect, useState } from 'react'
 
 
 const graphcms = new GraphQLClient("https://api-sa-east-1.hygraph.com/v2/cl9yvfs8y2bdh01uk61941hvs/master")

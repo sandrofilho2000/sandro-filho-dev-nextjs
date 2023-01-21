@@ -55,7 +55,7 @@ const About = () => {
                             tecnologias. Busco soluções eficazes e criativas para a resolução do desafio de criar um site
                             mais moderno e deslumbrante do que o último. Confira abaixo meu portfólio e dê uma olhada em
                             alguns dos meu trabalhos!</p>
-                        <a href="./assets/Curriculum.pdf" target="_blank" rel="noreferrer">Baixar currículo</a>
+                        <a href="./assets/curriculum.pdf" target="_blank" rel="noreferrer">Baixar currículo</a>
                     </div>
                 </div>
             </div>
