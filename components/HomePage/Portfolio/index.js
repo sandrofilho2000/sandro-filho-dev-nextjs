@@ -35,11 +35,11 @@ let projects = [
     {
         "id": 1,
         "name": "InterJud",
-        "text": "Plataforma para compra e venda de créditos judiciais",
+        "text": "Plataforma para compra e venda de créditos judiciais (Em breve)",
         "img": "./assets/images/interjud.webp",
         "img_alt": "Site InterJud",
         "img_title": "Site InterJud",
-        "link": "http://interjud.com.br"
+        "link": "https://interjud-next.vercel.app/"
     },
     {
         "id": 2,
