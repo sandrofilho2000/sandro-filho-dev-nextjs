@@ -1488,7 +1488,7 @@ aside.theme-color-menu .colors-wrapper .colors-list li.crimson div {
 
 /* blog section styling */
 .blog .title::after {
-  content: "Fique por dentro da área";
+  content: "(Template)";
 }
 
 .blog {
