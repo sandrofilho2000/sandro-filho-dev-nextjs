@@ -13,8 +13,8 @@ def convert_to_webp(filename, path="images/"):
         img.save((path+fname+".webp"), "webp", quality=85)
 
 
-def convert_all(path="./public/assets/images/certificados"):
-    for root, dirs, files in os.walk("./public/assets/images/certificados"):
+def convert_all(path="./public/assets/images/"):
+    for root, dirs, files in os.walk("./public/assets/images/"):
         for imagefile in files:
             if imagefile.endswith(".png") or imagefile.endswith(".jpg") or imagefile.endswith(".jpeg"):
                 convert_to_webp(imagefile, os.path.join(root, ""))
