@@ -27,11 +27,11 @@ let projects = [
     },
     {
         "id": Math.random(),
-        "name": "InterJud",
+        "name": "Petopia",
         "text": "E-commerce criado em DECO totalmente editável e performatico",
         "img": "./assets/images/petopia.png",
-        "img_alt": "Petopia",
-        "img_title": "Petopia",
+        "img_alt": "Site Petopia",
+        "img_title": "Site Petopia",
         "link": "https://deco-sites-petopia.deno.dev/"
     },
     {
