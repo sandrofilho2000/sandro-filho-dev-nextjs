@@ -1,7 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import dynamic from "next/dynamic";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import Image from 'next/image';
 
 var $ = require("jquery");
 if (typeof window !== "undefined") {
@@ -15,25 +17,7 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
 
 let projects = [
     {
-        "id": 0,
-        "name": "Real Life Dashboard",
-        "text": "Um jeito de restaurantes gerenciarem seus pedidos de uma forma fácil e descomplicada (Em breve)",
-        "img": "./assets/images/dashboard.webp",
-        "img_alt": "Real Life Dash Board",
-        "img_title": "Real Life Dash Board",
-        "link": "https://real-life-dashboard-mdhiobzce-sandrofilho2000.vercel.app/products"
-    },
-    {
-        "id": 0,
-        "name": "Mulheres no front",
-        "text": "Site criado para divulgação de um curso afirmativo para mulheres no mercado de T.I",
-        "img": "./assets/images/mulheres_no_front.webp",
-        "img_alt": "Site Mulheres no Front",
-        "img_title": "Site Mulheres no Front",
-        "link": "https://www.universidaderaccoon.com/mulheres-no-front/"
-    },
-    {
-        "id": 1,
+        "id": Math.random(),
         "name": "InterJud",
         "text": "Plataforma para compra e venda de créditos judiciais (Em breve)",
         "img": "./assets/images/interjud.webp",
@@ -42,7 +26,35 @@ let projects = [
         "link": "https://interjud-next.vercel.app/"
     },
     {
-        "id": 2,
+        "id": Math.random(),
+        "name": "InterJud",
+        "text": "E-commerce criado em DECO totalmente editável e performatico",
+        "img": "./assets/images/petopia.png",
+        "img_alt": "Petopia",
+        "img_title": "Petopia",
+        "link": "https://deco-sites-petopia.deno.dev/"
+    },
+    {
+        "id": Math.random(),
+        "name": "Real Life Dashboard",
+        "text": "Um jeito de restaurantes gerenciarem seus pedidos de uma forma fácil e descomplicada (Em breve)",
+        "img": "./assets/images/dashboard.webp",
+        "img_alt": "Real Life Dash Board",
+        "img_title": "Real Life Dash Board",
+        "link": "https://real-life-dashboard-mdhiobzce-sandrofilho2000.vercel.app/products"
+    },
+    {
+        "id": Math.random(),
+        "name": "Mulheres no front",
+        "text": "Site criado para divulgação de um curso afirmativo para mulheres no mercado de T.I",
+        "img": "./assets/images/mulheres_no_front.webp",
+        "img_alt": "Site Mulheres no Front",
+        "img_title": "Site Mulheres no Front",
+        "link": "https://www.universidaderaccoon.com/mulheres-no-front/"
+    },
+
+    {
+        "id": Math.random(),
         "name": "JULIANA PSI",
         "text": "Site institucional para psicologia com um design clean e minimalista.",
         "img": "./assets/images/julianaPSI.webp",
@@ -51,7 +63,7 @@ let projects = [
         "link": "http://julianalemospsicologa.com.br/"
     },
     {
-        "id": 3,
+        "id": Math.random(),
         "name": "Pizzaria Real",
         "text": "Um cardápio virtual interativo feito para facilitar a vida do seu négocio",
         "img": "./assets/images/pizzaria_real.webp",
@@ -60,7 +72,7 @@ let projects = [
         "link": "https://sunny-caramel-fbe4f4.netlify.app/"
     },
     {
-        "id": 4,
+        "id": Math.random(),
         "name": "Site institucional",
         "text": "Modelo de site institucional para diversas aplicações. Design simples e minimalista",
         "img": "./assets/images/lorem.webp",
@@ -69,7 +81,7 @@ let projects = [
         "link": "https://compassionate-hodgkin-51b523.netlify.app/"
     },
     {
-        "id": 5,
+        "id": Math.random(),
         "name": "SINAPSE",
         "text": "Site modelo com um tema dark. Muito indicado para LP's de cursos no geral",
         "img": "./assets/images/sinapse.webp",
@@ -78,7 +90,7 @@ let projects = [
         "link": "https://rocky-teste.herokuapp.com/"
     },
     {
-        "id": 6,
+        "id": Math.random(),
         "name": "Glassmorphism Calendar",
         "text": "Calendário dinâmico criado a partir dos meus estudos",
         "img": "./assets/images/glassmorphism Calendar.webp",
@@ -87,7 +99,7 @@ let projects = [
         "link": "https://dynamic-calendar-b94fc.web.app/"
     },
     {
-        "id": 7,
+        "id": Math.random(),
         "name": "Card Glass",
         "text": "Reproduzindo a textura de um vidro com CSS, extremamante realista.",
         "img": "./assets/images/card_glass.webp",
@@ -96,7 +108,7 @@ let projects = [
         "link": "https://glass-card-51d2e.web.app/"
     },
     {
-        "id": 8,
+        "id": Math.random(),
         "name": "Gradient Border",
         "text": "Aplicando cores Neon em um design real.",
         "img": "./assets/images/gradient_border.webp",
@@ -105,7 +117,7 @@ let projects = [
         "link": "https://gradient-border-4d11c.web.app/"
     },
     {
-        "id": 9,
+        "id": Math.random(),
         "name": "Moonlight Parallax",
         "text": "Como criar um efeito parallax em um site deslumbrante.",
         "img": "./assets/images/moonlight_parallax.webp",
@@ -162,8 +174,7 @@ const Portfolio = () => {
                                 return (
                                     <div key={index} className="card">
                                         <div className="box">
-                                            <img alt={item.img_alt} title={item.img_title} loading="lazy"
-                                                src={item.img} />
+                                            <img width={320} height={176} alt={item.img_alt} title={item.img_title} loading="lazy" src={item.img} />
                                             <div className="text">{item.name}</div>
                                             <p>{item.text}</p>
                                             <a href={item.link} target="_blank" rel="noreferrer">Acessar</a>
