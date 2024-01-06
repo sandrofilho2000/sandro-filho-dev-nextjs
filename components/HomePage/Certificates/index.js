@@ -7,8 +7,6 @@ import AppContext from '../../AppContext'
 const Certificates = () => {
     const context = useContext(AppContext)
 
-    const [certificateOverlay, setCertificateOverlay] = useState()
-
     const certificates = [
         {
             id: 0,
@@ -60,8 +58,8 @@ const Certificates = () => {
         ,
     ]
 
-    let handleOpenOverlay = (e) =>{
-        let id = e.currentTarget.getAttribute("picId")
+    let handleOpenOverlay = (id) =>{
+
         let pic = certificates.filter((item)=>{
             return item.id == id
         })
@@ -91,7 +89,7 @@ const Certificates = () => {
                         certificates.map((item, index)=>{
                             return (
 
-                                <div onClick={(e)=>{handleOpenOverlay(e)}} picId={item.id} key={item.id} className='certificate'>
+                                <div onClick={(e)=>{handleOpenOverlay(item.id)}} key={item.id} className='certificate'>
                                     <Tilt className='Tilt'
                                         {...tiltOptions}
                                     >

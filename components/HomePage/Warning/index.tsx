@@ -2,16 +2,16 @@ import React, {useEffect, useRef} from 'react'
 
 const Warning = () => {
 
-    const warningRef = useRef()
+    const warningRef = useRef(null);
 
     let close_warning = () => {
-        warningRef.current.classList.remove("active")
-        localStorage.setItem("warning_closed", true)
+        warningRef.current?.classList.remove("active")
+        localStorage.setItem("warning_closed", "true")
     }
 
     let open_warning = () => {
         if (localStorage.getItem("warning_closed") !== 'true') {
-            warningRef.current.classList.add("active")
+            warningRef.current?.classList.add("active")
         }
     }
 
@@ -23,7 +23,7 @@ const Warning = () => {
 
 
     return (
-        <div ref={warningRef} className="warning">
+        <div ref={warningRef} className="warning fixed">
             <div onClick={()=>{close_warning()}} className="close_warning">+</div>
         </div>
     )

@@ -11,7 +11,9 @@ const Head_JSX = () => {
             <meta content="width=device-width, initial-scale=1.0" name="viewport" />
             <meta content="Sandro Filho DEV | Front End" name="description" />
             <link href="https://sandrofilhodev.com" rel="canonical" />
-
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,100;1,200&display=swap" rel="stylesheet" />
             <meta content="index" name="robots" />
             {/* <!-- HTML Meta Tags --> */}
             <title>Sandro Filho DEV | Front End</title>
